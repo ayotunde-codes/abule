@@ -1,0 +1,177 @@
+@import (reference) './assets/variables.less';
+
+@adminApp_containerWidth: 300px;
+
+.adminApp_filterPageContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: grid;
+    place-items: center;
+}
+
+.adminApp_filterPage{
+    width: 95vw;
+    max-width: 800px;
+    max-height: 80vh;
+    background: @white;
+    border-radius: @adminApp_borderRadius;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    overflow-y: auto;
+    justify-content: space-between;
+    &>div:nth-child(1){
+        display: grid;
+    }
+    .closeContainer{
+        padding: 4px 4px 2px;
+        border-radius: 50%;
+        justify-self: right;
+        background: @gray-200;
+        border: 1px solid @gray-200;
+        cursor: pointer;
+    }
+    .closeContainer:hover{
+        border: 1px solid #000;
+    }
+    .header{
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .adminApp_applyFilter{
+        width: 90%;
+        max-width: 250px;
+        margin: 30px auto;
+        text-align: center;
+        background: @amber;
+        border: 0;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0px 9px 22px rgba(243, 221, 16, 0.2);
+        border-radius: @adminApp_borderRadius;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+.adminApp_inputRangeContainer{
+    width: 80%;
+    border: 1.5px solid #000;
+    max-width: 450px;
+    margin-left: 10px;
+    height: 32px;
+    border-bottom: none;
+    .adminApp_slideContainer{
+        position: relative;
+        bottom: 9px;
+        display: grid;
+        place-items: center;
+        width: min-content;
+        gap: 5px
+    }
+    .adminApp_slider{
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+        background: @gray;
+        border-radius: 50%;   
+    }
+    .adminApp_slideLabel{
+        font-size: 0.8em;
+        position: absolute;
+        top: 18px;
+        font-weight: 400;
+        color: #000;
+    }
+}
+
+.admin_inputRangeLabels{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 475px;
+    color: #000;
+    margin: 3px 0;
+}
+
+
+.adminApp_filterform{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    border: 0;
+    margin: 0;
+    padding-top: 0;
+    width: 100%;
+    max-width: 100%;
+    label{
+        font-weight: 600;
+    }
+    input{
+        padding: 8px 10px;
+        width: 100%;
+        max-width: @adminApp_containerWidth;
+        border: 1px solid @gray;
+        background: @gray-light;
+        border-radius: @adminApp_borderRadius;
+    }
+    .adminApp_dropdownContainer{
+        max-width: @adminApp_containerWidth;
+    }
+    .adminApp_label_selected{
+        width: 100%;
+        margin: 14px 0;
+        display: block;
+        border-bottom: 1px solid @gray-200;
+        padding: 3px 0;
+        font-size: 1.1em;
+        font-weight: 700;
+    }
+    .adminApp_pill, .adminApp_pill_selected{
+        display: inline-flex;
+        padding: 5px 8px;
+        gap: 8px;
+        align-items: center;
+        height: 25px;
+        border-radius: 30px;
+        font-weight: 400;
+        margin: 6px;
+        margin-left: 0;
+    }
+    .adminApp_pill{
+        border: 1px solid @gray-200;
+        cursor: pointer;
+        .adminApp_cancelButton{
+            display: none;
+        }
+    }
+    .adminApp_pill:hover{
+        background: @gray-200;
+    }
+
+    .adminApp_pill_selected{
+        border: 1px solid #000;
+        .adminApp_cancelButton{
+            display: grid;
+            place-items: center;
+            padding: 2px 4px 0px; 
+            color: @white;
+            background: #000;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 600px;
+            cursor: pointer;
+        }
+    }
+
+}

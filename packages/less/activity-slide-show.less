@@ -1,0 +1,286 @@
+// out: false
+@import (reference) './activity-preview.less';
+
+.activity-slide-show {
+  width: 100%;
+  height: 100%;
+  // margin-top: 2.5em;
+
+  .content {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: solid 1px @color-border-1;
+
+    @active-indicator-color: lighten(@color-1, 40%);
+
+    .controllers {
+      // background: red;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      opacity: 0;
+      transition: opacity 250ms linear;
+      cursor: pointer;
+
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .control {
+      .hmv-element;
+      position: absolute;
+      background: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      font-weight: 800;
+      text-shadow: none;
+      border-radius: 9999px;
+      width: 2em;
+      height: $width;
+      cursor: pointer;
+      z-index: 1;
+
+      &.left {
+        left: 1em;
+        // margin-left: -1.3em;
+      }
+
+      &.right {
+        right: 1em;
+        // margin-right: -1.3em;
+        // margin-right: 3px;
+      }
+
+      &.in-active {
+        opacity: 0;
+      }
+
+      &:hover {
+        background: @active-indicator-color;
+      }
+    }
+
+    .screen {
+      width: 100%;
+      height: 100%;
+      // border-radius: .8em;
+      overflow: hidden;
+      // margin-top: 5em;
+
+      &-list-container {
+        .page-container;
+        overflow: hidden;
+      }
+
+      .items {
+        #customScrollBar(0px);
+        #hideScrollBar();
+        position: relative;
+        background: #ffffff;
+        display: grid;
+        grid-auto-flow: column;
+        height: 100%;
+        width: 100%;
+        transform: translate(0px, 0px);
+        transition: transform 500ms ease-out;
+        grid-gap: .7em;
+        overflow-y: hidden;
+        // border: solid 1px @color-border-1;
+        // overflow: hidden;
+        border-radius: .8em;
+        scroll-behavior: smooth;
+
+        .item {
+          width: 100%;
+          position: relative;
+          cursor: pointer;
+
+          img,
+          video {
+            position: absolute;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .overlay {
+            // background: red;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            &.video-controls {
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-end;
+              padding: 1.2em;
+
+              .icon {
+                cursor: pointer;
+                display: flex;
+                font-size: 1.6em;
+                color: rgb(255, 255, 255);
+                text-shadow: 0px 0px 0.15em rgb(0, 0, 0);
+                height: max-content;
+              }
+            }
+          }
+        }
+
+        &.len-3 {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &.len-4 {
+          grid-template-columns: auto auto auto;
+          grid-template-rows: auto auto;
+
+          >:nth-child(1) {
+            grid-column: 1 / span 1;
+            grid-row: 1/ span 2;
+          }
+
+          >:nth-child(2) {
+            grid-column: 2 / span 1;
+            grid-row: 1/ span 1;
+          }
+
+          >:nth-child(3) {
+            grid-column: 2 / span 1;
+            grid-row: 2/ span 1;
+          }
+
+          >:nth-child(4) {
+            grid-column: 3 / span 1;
+            grid-row: 1/ span 2;
+          }
+        }
+
+        &.len-5 {
+          grid-template-columns: auto auto auto auto;
+          grid-template-rows: auto auto;
+
+          >:nth-child(1) {
+            grid-column: 1 / span 1;
+            grid-row: 1/ span 2;
+          }
+
+          >:nth-child(2) {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 2;
+          }
+
+          >:nth-child(3) {
+            grid-column: 3 / span 1;
+            grid-row: 1/ span 1;
+          }
+
+          >:nth-child(4) {
+            grid-column: 3 / span 1;
+            grid-row: 2/ span 1;
+          }
+
+          >:nth-child(5) {
+            grid-column: 4 / span 1;
+            grid-row: 1/ span 2;
+          }
+        }
+
+        @media only screen and (max-width: @mobileBreakPoint) {
+          grid-auto-flow: column;
+          width: 100%;
+          grid-template-columns: unset !important;
+          grid-auto-columns: 100% !important;
+          grid-template-rows: 100% !important;
+          grid-gap: 0;
+
+          .item {
+            grid-column: unset !important;
+            grid-row: unset !important;
+          }
+        }
+
+      }
+
+    }
+
+    .indicators {
+      display: none;
+      position: absolute;
+      top: auto;
+      left: 0;
+
+      bottom: 0;
+      width: 100%;
+      padding: 1em;
+      padding-top: 0;
+      margin: 0;
+      justify-content: center;
+      opacity: 1;
+      z-index: 2;
+      // transition: opacity @revealTime;
+
+      .indicator {
+        list-style-type: none;
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        height: .2em;
+        max-width: 3.5em;
+        margin-right: 1em;
+        border-radius: 9999999999999px;
+        cursor: pointer;
+        transition: background 250ms linear;
+        box-shadow: 0px 0px .35em rgba(0, 0, 0, 0.2);
+
+        &:last-child {
+          margin: 0
+        }
+
+        &.active {
+          // background: lighten(@color-1, 40%);
+          // background: white;
+        }
+
+        &:hover,
+        &:focus {
+          // background: white;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .content {
+      .controllers {
+        opacity: 1;
+      }
+
+      .control {
+        // display: flex;
+
+      }
+
+      .indicators {
+        display: flex;
+
+      }
+    }
+  }
+}

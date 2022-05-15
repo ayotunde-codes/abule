@@ -1,0 +1,401 @@
+// out: false
+
+.page-container {
+
+  .about-paragraph {
+    line-height: 1.6;
+    font-size: 1.2em;
+  }
+
+  .about-intro-col {
+    display: grid;
+
+    .about-paragraph-2 {
+      margin: 3.5em 0 0;
+    }
+
+    .about-intro-img {
+      display: grid;
+      justify-content: center;
+      margin: 2em 0 0;
+      
+      .img-title {
+        font-size: 6em;
+        margin: 0;
+        line-height: 1.4;
+
+        &::first-letter {
+          text-transform: lowercase;
+        }
+      }
+
+      @media screen and (max-width: @iPadMiniBreakPoint) {
+        .img-title {
+          font-size: 4em;
+        }
+      }
+  
+      .img-paragraph {
+        font-size: 1.6em;
+        font-weight: bold;
+        line-height: unset;
+        
+        .text-small {
+            font-weight: 300;
+            font-size: small;
+        }
+      }
+
+      @media screen and (max-width: @iPadMiniBreakPoint) {
+        .img-paragraph {
+          font-size: 1.2em;
+        }
+      }
+
+      .origin {
+        margin: 2em 0  0;
+        padding: 0 0.8em 0.5em;
+        font-size: 1em;
+        font-weight: 800;
+      }
+
+      .place {
+        font-size: 1em;
+        padding: 0.8em;
+        font-weight: 800;
+      }
+
+      .img-intro-info {
+        border: 0.2em solid;
+        border-right: none;
+        border-left: none;
+        padding: 2.5em 0 0;
+
+        .img-intro-lists {
+            display: grid;
+            grid-row-gap: 0.8em;
+            font-size: 1.6em;
+            max-width: 20em;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+          .img-intro-lists {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+
+  .about-col-1 {
+    margin: 3.5em 0 0;
+    display: grid;
+    grid-row-gap: 5em;
+  
+    .about-col-sub {
+      display: grid;
+      grid-row-gap: 1em;
+  
+      .mission {
+        background: #FFEC7F80;
+        font-size: 1.7em;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7.3em;
+        justify-self: center;
+        padding: 0.38em 2em;
+        width: 30em;
+        border-radius: 0.5em;
+      }
+
+      @media screen and (max-width: @iPadMiniBreakPoint) {  
+        .mission {
+          width: 20em;
+          font-size: 1.5em;
+          padding: 0 1em;
+          height: 7em;
+        }
+      }
+
+      @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .mission {
+          width: unset;
+          min-width: 13em;
+          height: 8em;
+          font-size: 1.2em;
+          padding: 0 2.2em;
+        }
+      }
+    
+      .vision {
+        background: #ACF6F980;
+        font-size: 1.7em;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7.3em;
+        justify-self: center;
+        padding: 0.38em 2em;
+        width: 30em;
+        border-radius: 0.5em;
+      }
+
+      @media screen and (max-width: @iPadMiniBreakPoint) {
+        .vision {
+          width: 20em;
+          font-size: 1.5em;
+          padding: 0 1em;
+          height: 7em;
+        }
+      }
+
+      @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .vision {
+          width: unset;
+          min-width: 13em;
+          height: 8em;
+          font-size: 1.2em;
+          padding: 0 2.2em;
+        }
+      }
+    }
+  }
+
+  .about-col-2 {
+    margin: 7em 0  0;
+      
+    .dialect-title {
+      line-height: 1.4;
+    }
+
+    @media screen and (max-width: @mobileBreakPoint) {
+      .dialect-title {
+        font-size: 1.7em;
+      }
+    }
+  }
+
+  .about-col-3 {
+    margin: 7em 0 0;
+
+    .culture-title {
+      line-height: 1.4;
+    }
+
+    @media screen and (max-width: @mobileBreakPoint) {
+      .culture-title {
+        font-size: 1.7em;
+      }
+    }
+  }
+
+  .about-col-4 {
+    margin: 5em 0 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 3px;
+    justify-content: space-between;
+    position: relative;
+
+    .hut-img {
+      height: 12em;
+      width: auto;
+      position: absolute;
+      align-self: center;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+
+    @media screen and (max-width: @iPadPortraitBreakPoint) {
+      .hut-img {
+        height: 8em;
+        opacity: 0.9;
+        margin-top: 19em;
+        padding-left: 1em;
+      }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+      .hut-img {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .sub-col-title {
+          font-size: 3em;
+          margin: 0 0 0.25em;
+        }
+        
+        .dots {
+          display: flex;
+          justify-content: center;
+          margin-top: 3em;
+
+          .dot {
+            border-radius: 5em;
+            background: #d1d1d1;
+            width: 1em;
+            height: 1em;
+            margin: 0 0.5em 0 0;
+          }
+        }
+    }
+
+    @media screen and (max-width: @mobileBreakPoint) {
+      .sub-col-title {
+        font-size: 2.5em;
+      }
+    }
+
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+      .dots {
+        grid-row: 2;
+        grid-column: ~"1 / -1";
+      }
+    }
+
+    .awareness {
+      grid-column: ~"1 / -1";
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+      .awareness {
+        grid-column: unset;
+      }
+    }
+
+    .perserverance {
+      margin-left: 6em;
+    }
+    
+    .preservation {
+      margin-left: -7em;
+    }
+
+    @media screen and (max-width: @iPadPortraitBreakPoint) {
+
+      .perserverance {
+        margin-left: 2em;
+      }
+      
+      .preservation {
+        margin-left: -2em;
+      }
+    }
+  
+    .sub-col-4 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 360px;
+
+      .sub-col-info {
+          text-align: center;
+      }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+      .sub-col-4 {
+        max-width: unset;
+        width: 500px;
+        border: 0.1em solid #000;
+        border-radius: 3em;
+        padding: 50px 62px;
+      }
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+      .sub-col-4 {
+        width: 24em;
+        margin: 0 auto;
+        padding: 50px 30px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      .sub-col-4 {
+        width: 21.5em;
+        margin: 0 auto;
+        padding: 20px 23px;
+      }
+    }
+  }
+
+  @media screen and (max-width: @iPadMiniBreakPoint){
+    .about-col-4 {
+      grid-template-columns: repeat(5, auto);
+      grid-column-gap: 0;
+      margin: 6em auto 0;
+      overflow: hidden;
+      max-width: 500px;
+    }
+  }
+
+  @media screen and (max-width: @mobilePortraitBreakPoint) {
+    .about-col-4 {
+      justify-content: center;
+      max-width: unset;
+      grid-column-gap: 0.5em;
+    }
+  }
+
+
+  .about-col-5 {
+    margin: 7em 0 0;
+    display: grid;
+  }
+
+  .about-col-6 {
+    margin: 0;
+    display: grid;
+    justify-items: center;
+    
+    .ceo {
+      height: 20em;
+      width: 18em;
+      object-fit: cover;
+      object-position: top;
+    }
+  
+    .col-6-paragraph {
+      margin: 1em 0 0 0.1em;
+    }
+  
+    .col-6-links {
+      display: grid;
+      grid-auto-flow: column;
+      grid-column-gap: 1em;
+    }
+  }
+
+  .sub-col-6 {
+    margin: 4em 0 0 0;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
+
+    .name-tag {
+        font-weight: 600;
+      }
+      
+      .role-tag {
+        font-size: 0.9em;
+      }
+    }
+
+  @media screen and (min-width: @mobileBreakPoint) {
+    .about-col-6 {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
+}

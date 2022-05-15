@@ -1,0 +1,742 @@
+// out: false
+@background: rgb(0, 0, 0);
+
+#meetingScreen {
+  display: flex;
+  // flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  #sharingStyles() {
+    grid-template-rows: max-content auto max-content;
+
+    .head-content {
+      display: flex;
+      overflow: auto;
+      height: max-content;
+      justify-content: center;
+
+
+      .tiles {
+        display: flex;
+        width: max-content;
+        height: max-content;
+        overflow: unset;
+        margin: 0;
+
+        .tile {
+          width: 12vw;
+          // height: 12vw;
+        }
+      }
+    }
+  }
+
+
+  #fixShowFoot(@isMobile : false) {
+    #flow-meeting.flow {
+
+      .foot-content {
+        @actions-gap: 5.5vw;
+        margin: 0px;
+
+        & when (@isMobile =true) {
+          display: flex;
+          flex-direction: row-reverse;
+          position: static;
+          padding: 1em 0;
+          justify-content: center;
+          grid-template-columns: auto;
+        }
+
+        .actions {
+          grid-gap: @actions-gap;
+          margin: 0;
+
+          .action-holder {
+            .action {
+              // font-size: 1em;
+              padding: .65em;
+            }
+          }
+
+          &:first-child when (@isMobile =true) {
+            margin-left: @actions-gap;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  #ongoingMeetingParticipants() {
+    width: max-content;
+    min-width: 20em;
+
+    .head {
+      width: 100%;
+      font-weight: bold;
+      text-align: center;
+      padding: .8em 1em;
+      border-bottom: solid 1px @color-border-1;
+
+      p {
+        font-size: 1.5em;
+        margin: 0px;
+
+      }
+    }
+
+    >.content {
+      width: 100%;
+      min-height: 10em;
+      max-height: 60vh;
+      overflow: auto;
+
+      // padding: .5em 0;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        text-transform: capitalize;
+        width: 100%;
+
+        .actions {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: .8em;
+          width: max-content;
+          border: none;
+          padding: 0px;
+          margin: 0;
+
+          // .action-holder {
+          .action {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            font-size: 1em;
+            width: max-content;
+            height: max-content;
+            // padding: .6em;
+            color: #6f6f6f;
+            cursor: pointer;
+
+            &.in-active {
+              opacity: .6;
+
+              &:after {
+                display: block;
+                content: "";
+                border-top: solid 2px;
+                border-bottom: solid 1px white;
+                position: absolute;
+                transform: rotate(130deg);
+                width: 120%;
+                z-index: 999;
+              }
+            }
+          }
+
+          // }
+        }
+      }
+    }
+
+    >.bottom {
+
+      .mute-all {
+        margin: 0;
+        padding-top: .5em;
+        padding-bottom: $padding-top;
+        border-radius: 0px;
+      }
+    }
+  }
+
+
+  #flow-meeting.flow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: @background;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: auto max-content;
+
+    .tile {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      border: solid 1px @background;
+
+      .overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: @background;
+
+        .avatar {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 15%;
+          height: max-content;
+          background: white;
+          overflow: hidden;
+          min-width: 13vw;
+          border-radius: 99999px;
+
+          img {
+            position: absolute;
+            padding: 20%;
+            width: 100%;
+            height: auto;
+
+          }
+
+          &.is-user {
+            img {
+
+              border-radius: 99999px;
+              padding: 0;
+              border: solid .2em @color-1;
+            }
+          }
+
+          &:before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+          }
+
+          @media only screen and (max-width: @mobileBreakPoint) {
+            width: 25%;
+          }
+        }
+
+      }
+
+      video {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        // background: url(/img/user.svg);
+        // background-size: contain;
+        // background-position: center;
+        // background-repeat: no-repeat;
+      }
+
+      .info {
+        @info-background: fadeout(@background, 70);
+        display: flex;
+        position: absolute;
+        background: @info-background;
+        padding: 0.3em .6em;
+        border-radius: .8em;
+        font-weight: 600;
+        color: white;
+        top: auto;
+        bottom: 5px;
+        text-transform: capitalize;
+        max-width: 90%;
+        overflow: hidden;
+
+        .name {
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .icon {
+          margin-left: .5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          color: white;
+
+          &.in-active {
+            opacity: .6;
+
+            &:after {
+              display: block;
+              content: "";
+              border-top: solid 2px;
+              border-bottom: solid 1px @info-background;
+              position: absolute;
+              transform: rotate(130deg);
+              width: 120%;
+              z-index: 999;
+            }
+          }
+        }
+      }
+
+      &.active {
+        border: solid 2px @color-12;
+      }
+
+      &.screen-share {
+        video {
+          background: @background  !important;
+          object-fit: contain;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        padding-top: 56.25%;
+      }
+    }
+
+    .head-content {
+      // background: red;
+      display: grid;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      #customScrollBar(0px);
+
+      .tiles {
+        display: grid;
+        grid-gap: 0px;
+        width: 100%;
+        justify-content: center;
+        margin: auto;
+        grid-auto-flow: column;
+        overflow: hidden;
+        /* grid-column: 2; */
+        height: 100%;
+
+      }
+
+
+      &[cols="1"] {
+        .tiles {
+          grid-auto-columns: calc(100% / 1);
+
+        }
+      }
+
+      &[cols="2"] {
+        .tiles {
+          grid-auto-columns: calc(100% / 2);
+        }
+      }
+
+      &[cols="3"] {
+        .tiles {
+          grid-auto-columns: calc(100% / 3);
+        }
+      }
+
+      &[cols="4"] {
+        .tiles {
+          grid-auto-columns: calc(100% / 4);
+        }
+      }
+
+      &[cols="5"] {
+        .tiles {
+          grid-auto-columns: calc(100% / 5);
+        }
+      }
+    }
+
+    .user-presenting {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      padding: 1em;
+      color: @color-3;
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .icon {
+          font-size: 3em;
+          margin-bottom: .24em;
+        }
+
+        .text {}
+
+        button {
+          font-size: .7em;
+          width: max-content;
+          margin: .3em 0 0;
+        }
+      }
+    }
+
+    .meeting-details {
+      display: none;
+    }
+
+    .foot-content {
+      // position: fixed;
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: space-between;
+      grid-template-columns: 1fr 1fr 1fr;
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      // background: orange;
+      padding: .6em 1em;
+      // overflow: auto;
+      position: absolute;
+      z-index: 12;
+      width: 100%;
+      transition: margin-bottom 500ms ease-in-out;
+      margin-bottom: -6em;
+      background: @background;
+      #customScrollBar(0px);
+
+      .actions {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 2em;
+        width: max-content;
+        justify-content: center;
+        margin: auto;
+
+        .action-holder {
+          .action {
+            @background: #fcfcfc;
+            @color: darken(@background, 22);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 2.8em;
+            height: $width;
+            font-size: 1.2em;
+            background: @background;
+            color: @color;
+            border-radius: 99999px;
+
+            .icon {
+              display: inline-block;
+              font-size: 1.15em;
+
+              &.info {
+                align-self: baseline;
+                height: max-content;
+                /* background: black; */
+                position: absolute;
+                left: auto;
+                right: 18%;
+                top: 2%;
+                color: @color-12;
+
+              }
+            }
+
+            .slash {
+              position: absolute;
+              transform: rotate(130deg);
+              z-index: 1;
+              height: .16em;
+              border-bottom: solid .06em white;
+              background: @color;
+              transition: width 60ms linear;
+              width: 55%;
+
+            }
+
+            &.active {
+              background: @color-1;
+              background: @color-3;
+              color: inherit;
+
+              .slash {
+                width: 0px;
+              }
+            }
+
+            &:not(.disabled):hover {
+              @hover-color: darken(@background, 40);
+              color: @hover-color;
+
+              .slash {
+                background: @hover-color;
+
+              }
+            }
+
+            &.disabled {
+              cursor: not-allowed;
+            }
+
+          }
+
+          &.end-call {
+            .action {
+
+              background: @color-danger;
+              background: @color-1;
+              color: white;
+              color: inherit;
+            }
+          }
+
+          &.more-options {
+            .icon {
+              font-size: 1.5em;
+            }
+          }
+
+          &.share-screen {
+            @media only screen and (max-width: @mobileBreakPoint) {
+              display: none;
+            }
+
+          }
+        }
+
+        &:nth-child(1) {
+          margin: 0;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .host {
+        width: 12em;
+        height: $width;
+        margin-left: auto;
+      }
+
+      &.show {
+        margin-bottom: 0
+      }
+    }
+
+    #ongoingMeetingParticipants {
+      #ongoingMeetingParticipants()
+    }
+
+    #ongoingMeetingMoreActions {
+      #ongoingMeetingParticipants;
+
+
+      .content {
+        min-height: 0px;
+
+        .action {
+          justify-content: flex-start;
+
+          .icon {
+            margin-right: .6em;
+          }
+
+          &.chat {
+            display: none;
+
+            @media only screen and (max-width: @mobileBreakPoint) {
+              display: flex;
+            }
+          }
+
+        }
+
+
+      }
+    }
+
+    #ongoingMeetingSettings {
+      #ongoingMeetingParticipants;
+      max-width: 30vw;
+
+
+      .content {
+        // min-height: 0px;
+        padding: 1em;
+
+        .setting-row {
+          margin-bottom: 1.5em;
+
+          .label {
+            p {
+              display: inline-block;
+              font-weight: bold;
+              padding: 0 0 0 1.3em;
+              margin: 0 0 .3em;
+            }
+          }
+
+          .field {
+
+            select {
+              font-weight: inherit;
+              margin: 0;
+            }
+          }
+        }
+
+
+      }
+
+    }
+
+    &.sharing-content {
+      #sharingStyles()
+    }
+  }
+
+  #ongoingMeetingChat {
+    #ongoingMeetingParticipants;
+    width: 30vw;
+    height: 100%;
+    background: white;
+    display: grid;
+    grid-auto-rows: max-content auto max-content;
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .switch-page {
+        visibility: hidden;
+      }
+
+      .go-back {
+        @media only screen and (max-width: @iPadBreakPoint) {
+          visibility: visible;
+
+        }
+      }
+    }
+
+    >.content {
+      // min-height: 0px;
+      min-height: 0;
+      max-height: max-content;
+      padding: 1em;
+      overflow: auto;
+
+
+      .chat-message {
+        margin-bottom: 1.3em;
+
+        .right {
+
+          .bottom {
+
+            .message {
+              .content {
+                min-height: 0px;
+                max-height: max-content;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0
+        }
+
+      }
+
+    }
+
+    .composer {
+      #chatMessageComposer {
+        .message-text-field-container {
+          padding-left: 1em;
+          padding-right: $padding-left;
+        }
+      }
+    }
+
+
+  }
+
+  @media only screen and (max-width: @iPadBreakPoint) {
+    #fixShowFoot();
+
+    #flow-meeting.flow {
+      grid-template-rows: auto max-content max-content;
+
+    }
+
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    #fixShowFoot(true);
+
+
+    #flow-meeting.flow {
+      #sharingStyles();
+
+      .head-content {
+        .tiles {
+          .tile {
+            width: 30vw !important;
+
+            .info {
+              font-size: .7em
+            }
+          }
+        }
+      }
+
+      .user-presenting {
+        font-size: 1.2em
+      }
+
+      .meeting-details {
+        display: block;
+        color: @color-3;
+      }
+
+      &.sharing-content {}
+
+
+
+    }
+
+    #ongoingMeetingChat {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      z-index: 12;
+    }
+  }
+
+
+}

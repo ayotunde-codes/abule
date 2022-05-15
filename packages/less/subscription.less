@@ -1,0 +1,235 @@
+// out: false
+@containerMaxWidth: 1000px;
+@faqcontainerMaxWidth: 1450px;
+
+#subscription {
+  max-width: @containerMaxWidth;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  scrollbar-width: 0;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .space-header-text {
+    margin: 0 auto;
+    line-height: 1.1;
+  }
+
+  .subscription-content {
+    width: 100%;
+  }
+
+  .subscription-top {
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 0px 2em;
+
+    >h2 {
+      font-size: 3em;
+      margin-bottom: 1em;
+    }
+
+    >p {
+      font-size: 1em;
+      max-width: 40em;
+      margin: auto;
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      >h2 {
+        font-size: 2em;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .subscription-toggle-content {
+    max-width: @containerMaxWidth;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .subscription-toggle {
+      width: auto;
+      margin: 1em 0;
+      margin-top: 4em;
+      // padding-right: 1em;
+      position: relative;
+      // right: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .toggler {
+        width: auto;
+        margin: 0px 10px;
+      }
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      justify-content: center;
+    }
+  }
+
+  .subscription-pricing {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    // white-space: nowrap;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 2em;
+
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      padding: 0px;
+      grid-auto-columns: 46%;
+      grid-gap: 1em;
+    }
+
+    @media only screen and (max-width: @mobilePortraitBreakPoint) {
+      grid-auto-columns: 92%;
+
+    }
+  }
+
+  .subscription-faq-accordion-header,
+  .subscription-faqs-container {
+    max-width: 1000px;
+    margin-top: 20px;
+  }
+
+  .subscription-faqs-container {
+    padding: 20px 0px;
+    margin: auto;
+
+    &>p {
+      margin: 3rem 0px 3rem 0px;
+      max-width: 600px;
+      opacity: 0.8;
+    }
+  }
+
+  .subscription-faq-accordion-header {
+    display: flex;
+    max-width: @containerMaxWidth;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+
+    &>p {
+      font-size: 1.15em;
+      font-weight: 400;
+    }
+
+    & p:nth-child(2) {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 0px;
+      opacity: 0.6;
+    }
+
+    .rotate-accordion-up {
+      transition: transform 0.5s;
+      transform: rotate(0deg);
+    }
+
+    .rotate-accordion-down {
+      transition: transform 0.5s;
+      transform: rotate(180deg);
+    }
+  }
+
+  .subscription-faq-accordion-content {
+    padding-top: 20px;
+    opacity: 0.8;
+    max-width: @containerMaxWidth;
+    width: 100%;
+  }
+
+  .subscription-faq-accordion-subcontent {
+    padding: 20px 40px 0px;
+    width: 300px;
+
+    .faq-age-group {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      img {
+        margin-right: 10px;
+        max-width: 15px;
+      }
+    }
+  }
+
+  .subscription-hide-faq-accordion {
+    animation: hide forwards;
+    -webkit-animation: hide forwards;
+    display: none;
+    overflow: hidden;
+  }
+
+  .subscription-show-faq-accordion {
+    animation: show forwards;
+    -webkit-animation: show forwards;
+    overflow: hidden;
+  }
+
+  .subscription-plan-card-button {
+    margin-top: 2em;
+
+    .icon {
+      margin-left: .5em
+    }
+  }
+
+  @-webkit-keyframes hide {
+    from {
+      height: 100%;
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @-webkit-keyframes show {
+    from {
+      height: 0px;
+    }
+
+    to {
+      height: 100%;
+    }
+  }
+
+  @keyframes hide {
+    from {
+      height: 100%;
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes show {
+    from {
+      height: 0px;
+    }
+
+    to {
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+@import (reference) "../batering-request.less";
+
+#barterRequestViewDetails {
+  .batering-request.pop-message;
+
+  .header {
+    .batering-request.header;
+    margin-top: 3em;
+
+  }
+
+  .kids-holder {
+    margin: 0;
+
+
+    .kids {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: auto;
+      grid-auto-flow: column;
+      grid-gap: 1.3em;
+      margin-bottom: 1em;
+
+
+      .kid {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: navajowhite;
+        outline: none;
+        cursor: pointer;
+        font-size: 1.2em;
+
+        .icon {
+          font-size: 3.5em;
+
+        }
+
+        .info {
+          text-align: left;
+          margin-left: 1em;
+
+          .name {
+            margin: 0;
+            font-size: 1.3em;
+            font-weight: 500;
+          }
+
+          p {
+            margin: 0;
+            text-transform: capitalize;
+          }
+
+          .gender {
+            font-size: .9em;
+            margin-top: .4em;
+            font-weight: 300
+          }
+        }
+
+        &.active {
+          // background: whitesmoke;
+          // padding: .6em;
+          // border-radius: .8em;
+          // border: solid 2px #c7c7c7;
+
+        }
+      }
+
+    }
+  }
+
+  .locations {
+    margin: 1.3em 0;
+    width: 100%;
+    text-align: left;
+
+    .type {
+      font-weight: 400;
+    }
+
+    .content {
+      display: grid;
+      grid-auto-flow: column;
+      width: 100%;
+
+      .location {
+        .info {
+          text-transform: capitalize
+        }
+      }
+
+    }
+  }
+
+  .special-instructions {
+    text-align: left;
+
+    .content {
+      display: grid;
+      grid-gap: 1em;
+
+      .special-instruction {
+        .kid-name {
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+
+        .instruction {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .contact-holder {
+    text-align: left;
+
+    table {
+      border-spacing: 0;
+
+      tbody {
+        tr {
+          td {
+            text-transform: capitalize;
+            padding: 0 0 .3em;
+
+            &:nth-child(1) {
+              font-weight: 400;
+              padding-right: 0.4em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

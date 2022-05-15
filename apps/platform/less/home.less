@@ -1,0 +1,511 @@
+// out: false
+
+#homePage {
+  margin-top: -@headerMarginBottom;
+
+  .hmv-hero {
+    // padding-top: 
+    .page-container;
+    margin-bottom: 2em;
+    padding-top: 2em;
+    padding-bottom: $padding-top;
+
+    .banner {
+      position: relative;
+      display: flex;
+      height: 100%;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 44%;
+      background-image: url("/img/mom_thoughts.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 38% bottom; // grid-auto-columns: 1fr 1fr 1fr;
+      min-height: 28em;
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        width: 100%;
+        justify-content: flex-end;
+
+        .small {
+          margin: 0;
+          line-height: 1.5;
+        }
+
+        .big {
+          margin: 0;
+          font-weight: 700;
+          white-space: nowrap;
+
+          &.top {
+            margin-top: .5em;
+          }
+
+          &.bottom {
+            margin-bottom: .top[margin-top];
+          }
+        }
+
+        .lower {
+          // justify-self: flex-end;
+          margin-top: 9em;
+        }
+      }
+
+      .bk {
+        display: none;
+        width: 55%;
+        // height: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+        margin-top: auto;
+      }
+
+      .right {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // justify-content: flex-end;
+        align-items: flex-end;
+        // padding-right: 10%;
+        width: 100%;
+        height: inherit;
+        justify-content: center;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+
+          .welcome-note {
+            line-height: 1.4;
+            text-align: center;
+            margin-top: 0;
+
+          }
+
+          .welcome-actions {
+            width: 100%;
+
+            >:nth-child(2) {
+              display: grid;
+              grid-gap: 1em;
+
+              .welcome-action {
+                margin: 0
+              }
+
+              .hmv-dropdown {
+                width: 100%;
+
+                .hmv-dropdown-cntrl {
+                  width: 100%;
+
+                }
+
+                .hmv-dropdown-content {
+                  // width: 100%;
+
+                  .welcome-action-options {
+                    width: 100%;
+                    padding: 2em;
+                    display: grid;
+                    grid-gap: 1em;
+
+                    button {
+                      margin: 0;
+                    }
+                  }
+                }
+
+              }
+            }
+          }
+
+          a {
+            display: block;
+            // margin-bottom: .6em;
+            width: 100%;
+
+            &:last-child {
+              button {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+      }
+
+      @media only screen and (max-width: @iPadBreakPoint) {
+        grid-gap: 35%;
+      }
+
+      @media only screen and (max-width: @iPadPortraitBreakPoint) {
+        grid-gap: 28%;
+        min-height: 23em;
+        background-position: 36% bottom;
+
+        .left {
+          .lower {
+            margin-top: 6em;
+          }
+        }
+      }
+
+      @media only screen and (max-width: @mobileBreakPoint) {
+        background: none;
+      }
+    }
+
+  }
+
+
+  .activity-previews {
+    margin-bottom: 5em;
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-columns: max-content;
+      grid-gap: 1em;
+
+      @media only screen and (max-width: @mobileBreakPoint) {
+        #customScrollBar(0px);
+
+      }
+    }
+
+  }
+
+  .batering-requests {
+    margin-bottom: 5em;
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-columns: max-content;
+      grid-gap: 2em
+    }
+
+  }
+
+  .add-people {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .content {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .page-container;
+      // grid-gap: 1.5em
+
+      .avi {
+        position: relative;
+        width: 6em;
+        height: $width;
+        border-radius: 9999px;
+        // overflow: hidden;
+        margin-left: -.6em;
+
+        img {
+          width: inherit;
+          height: inherit;
+          object-fit: contain;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: 920px) {
+    .hmv-hero {
+      .banner {
+        .right {
+          // width: 80%;
+        }
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: 900px) {
+    .add-people {
+      .content {
+
+        .avi {
+          width: 4em;
+          height: $width;
+
+        }
+
+      }
+    }
+  }
+
+  @media only screen and (min-width: @mobileBreakPoint) {
+    .activity-group-container {
+      .activity-group-header {
+        .label {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: @iPadMiniBreakPoint) {
+    .hmv-hero {
+
+      .banner {
+        background: none;
+
+        .left {
+          display: none;
+        }
+
+        .image-1 {
+          display: none;
+        }
+
+        .right {
+          padding: 0 2em;
+
+          .welcome-actions {
+            display: grid;
+            grid-auto-flow: column;
+            grid-gap: 1em;
+            justify-content: space-between;
+            align-items: center;
+
+            .bk {
+              width: 85%;
+            }
+
+            a {
+              min-width: 20em;
+            }
+          }
+
+          .support {
+            margin: 0 0 2em;
+            font-size: 1em;
+            text-align: center;
+
+            * {
+              margin: 0;
+              font-weight: 500;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+
+    .hmv-hero {
+
+      .banner {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0;
+        padding-bottom: 0;
+
+        .left {
+          display: none;
+
+        }
+
+        .right {
+          width: 100%;
+          padding: 0;
+
+          .content {
+            width: 100%;
+            text-align: center;
+
+            .welcome-note {
+              margin-top: .5em;
+              margin-bottom: 0.4em;
+              font-size: 3em;
+            }
+
+            .welcome-actions {
+              display: block;
+
+              .image-2 {
+                display: none !important;
+              }
+            }
+
+            .support {
+              margin: 0 0 1em;
+              font-size: 1.4em;
+
+              * {
+                margin: 0;
+                font-weight: 500;
+              }
+            }
+
+            a {
+              width: 60%;
+              margin: 0 auto;
+              position: relative;
+              z-index: 1;
+            }
+          }
+        }
+
+        .bk {
+          position: relative;
+          width: 100%;
+          height: auto;
+          max-height: 20em;
+          margin-left: 0em;
+          margin-top: 1em;
+
+        }
+      }
+
+    }
+
+    .activity-previews,
+    .batering-requests,
+    .add-people {
+      margin-bottom: 2em;
+
+      .header {
+        .label {
+          display: flex;
+          flex-direction: column;
+          font-size: 1em;
+        }
+      }
+
+      .content {
+        #customScrollBar(0px);
+
+      }
+    }
+
+    .activity-previews {
+      margin-bottom: 2em;
+
+      .content {
+        grid-template-columns: unset;
+        grid-gap: 0em;
+        grid-auto-flow: column;
+        grid-auto-columns: 73%;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+    }
+
+    .batering-requests {
+      .content {
+        grid-template-columns: unset;
+        grid-gap: 0em;
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        .batering-request {
+          // padding: 10px;
+
+        }
+      }
+    }
+
+    .add-people {
+      width: 100%;
+      height: max-content;
+
+      .content {
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        height: max-content;
+        // width: 100%;
+        /* grid-template-columns: repeat(4, 1fr);
+        grid-auto-columns: unset;
+        grid-auto-flow: row;
+
+        .avi{
+          justify-self: center;
+          margin: 0;
+          margin-bottom: 2em;
+          width: 5em;
+          height: $width;
+
+        } */
+
+      }
+    }
+  }
+
+  @media only screen and (max-width: @mobilePortraitBreakPoint) {
+
+    .hmv-hero {
+
+      .banner {
+
+
+        .left {}
+
+        .right {
+
+
+          .content {
+
+
+
+            .welcome-actions {
+
+              .image-2 {}
+            }
+
+            .support {}
+
+            a {
+              width: 100%;
+
+            }
+          }
+        }
+
+        .bk {
+          position: relative;
+          width: 100%;
+          height: auto;
+          max-height: 20em;
+          margin-left: 0em;
+          margin-top: 1em;
+
+        }
+      }
+
+    }
+
+  }
+
+
+
+}

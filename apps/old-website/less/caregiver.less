@@ -1,0 +1,674 @@
+// out: false
+
+.care-col-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 13em;
+
+    .care-style {
+        font-size: 1.4em;
+        line-height: 1;
+    }
+}
+
+.care-intro-title {
+    font-weight: unset;
+}
+
+@media screen and (max-width: @iPadPortraitBreakPoint) {
+    .care-col-title {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-col-title {
+        line-height: 1.3;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-col-title {
+        text-align: unset;
+        line-height: 1.2;
+        font-size: 1.8em;
+        margin: unset;
+    }
+}
+
+.care-paragraph {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4;
+    padding-right: 1em;
+}
+
+@media screen and (max-width: @iPadPortraitBreakPoint) {
+    .care-paragraph {
+        font-size: 1.2em;
+        padding-right: 2.5em;
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-paragraph {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-paragraph {
+        padding: 0;
+    }
+}
+
+.care-intro-grid {
+    position: relative;
+    display: grid;
+    align-items: baseline;
+    padding: 3em 0;
+    position: relative;
+    height: 37em;
+
+    .care-intro-column {
+        display: grid;
+        grid-row-gap: 1em;
+        margin: 2em 0;
+        position: relative;
+        z-index: 1;
+
+        .care-title {
+            margin: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 1em;
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .care-title {
+                font-size: 0.8em;
+            }
+        }
+
+        .care-info {
+            font-weight: 400;
+            font-size: 2em;
+            line-height: 1.4;
+            width: 17em;
+            margin: 0;
+
+            .care-highlight {
+                color: #E1568E;
+            }
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .care-info {
+                width: 12.8em;
+                font-size: 1.8em;
+            }
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .care-info {
+                font-size: 1.6em;
+            }
+        }
+
+        .get-started {
+            width: max-content;
+            font-size: 1em;
+            text-transform: uppercase;
+            margin: 0.8em 0 0;
+        }
+
+        .estimate {
+            font-size: 0.8em;
+            font-weight: 200;
+            border-bottom: .1em solid #fff9;
+            width: max-content;
+            padding: 0 0 0.2em;
+        }
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .care-intro-column {
+            margin: 0;
+        }
+    }
+
+    .care-intro-img {
+        position: absolute;
+        right: 0;
+        height: 31em;
+        z-index: 0;
+        top: 4em;
+    }
+
+    @media screen and (max-width: @iPadPortraitBreakPoint) {
+        .care-intro-img {
+            height: 23em;
+            top: unset;
+            bottom: 4em;
+        }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .care-intro-img {
+            height: 20em;
+            bottom: 2em;
+            top: unset;
+        }
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .care-intro-img {
+            height: auto;
+            width: 22em;
+        }
+    }
+}
+
+@media screen and (max-width: @iPadPortraitBreakPoint) {
+    .care-intro-grid {
+        height: 32em;
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-intro-grid {
+        padding: 0;
+        height: 29em;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-intro-grid {
+        padding: 0 0 1em;
+        height: 25em;
+    }
+}
+
+.care-column-block {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10em;
+    align-items: center;
+    padding: 5em 0;
+
+    .care-column-1 {
+        display: flex;
+    }
+
+    .care-column-2 {
+        display: grid;
+        grid-row-gap: 4em;
+
+        .care-col-2 {
+            display: grid;
+            grid-row-gap: 1em;
+            justify-content: end;
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .care-col-2 {
+                justify-content: unset;
+            }
+        }
+
+        .col-2-title {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #000;
+        }
+
+        @media screen and (max-width: @iPadPortraitBreakPoint) {
+            .col-2-title {
+                font-size: 1.6em;
+            }
+
+            .care-col-2-paragraph {
+                max-width: 22em;
+            }
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-2-title {
+                font-size: 1.2em;
+            }
+
+            .care-col-2-paragraph {
+                width: 18em;
+            }
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .care-col-2-paragraph {
+                width: auto;
+                max-width: unset;
+            }
+        }
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .care-column-2 {
+            margin: 3.5em 0 0;
+        }
+    }
+}
+
+@media screen and (max-width: @iPadPortraitBreakPoint) {
+    .care-column-block {
+        grid-column-gap: 5em;
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-column-block {
+        grid-column-gap: 2em;
+        padding: 3em 0;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-column-block {
+        grid-auto-flow: revert;
+        justify-content: unset;
+        align-items: unset;
+        padding: 3em 0;
+    }
+}
+
+.care-column-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 30em;
+    box-shadow: 0px 0.1em 0.5em #0000001c;
+    border: 1px solid #D4D4D4;
+    border-radius: 2em;
+
+    .col-3-img {
+        object-fit: cover !important;
+        filter: grayscale(1);
+        display: block;
+        height: 30em;
+        width: 38em;
+        border-top-left-radius: 2em;
+        border-bottom-left-radius: 2em;
+    }
+
+    .col-3-img:hover,
+    .col-3-img:focus {
+        filter: grayscale(0);
+    }
+
+    @media screen and (max-width: @iPadPortraitBreakPoint) {
+        .col-3-img {
+            width: 30em;
+        }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .col-3-img {
+            height: 21.9em;
+            width: 22em;
+        }
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .col-3-img {
+            width: 100%;
+            height: 297px;
+            border-top-left-radius: 2em;
+            border-top-right-radius: 2em;
+            border-bottom-left-radius: unset;
+        }
+    }
+
+    .col-3-info {
+        display: grid;
+        grid-row-gap: 2em;
+        justify-content: center;
+        justify-self: center;
+    }
+
+    @media screen and (max-width: @iPadPortraitBreakPoint) {
+        .col-3-info {
+            max-width: 22em;
+        }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .col-3-info {
+            max-width: 17em;
+        }
+    }
+
+    @media screen and (max-width: @mobileBreakPoint) {
+        .col-3-info {
+            align-self: end;
+            padding: 2.5em;
+            max-width: unset;
+        }
+    }
+
+    .col-3-label {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 500;
+        max-width: 16em;
+        margin: 0;
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .col-3-label {
+            font-size: 1.2em;
+        }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .col-3-paragraph {
+            font-size: 0.8em;
+        }
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-column-3 {
+        height: 22em;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-column-3 {
+        grid-auto-flow: row;
+        grid-template-columns: unset;
+        height: auto;
+    }
+}
+
+.care-column-4 {
+    display: grid;
+    grid-row-gap: 2em;
+    margin: 5em 0 0;
+    max-width: 55em;
+}
+
+.care-column-5 {
+    display: grid;
+    grid-template-columns: repeat(3, 15em);
+    justify-content: space-evenly;
+    margin: 6em 0px 0px;
+
+    .sub-col-5 {
+        display: grid;
+
+        .col-5-img {
+            height: 13em;
+            width: 100%;
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .col-5-img {
+                height: 10em;
+            }
+        }
+
+        .col-5-title {
+            font-size: 1.6em;
+            color: #000;
+            font-weight: bold;
+            margin: 1em 0 0;
+        }
+
+        @media screen and (max-width: @iPadPortraitBreakPoint) {
+            .col-5-title {
+                font-size: 1.4em;
+            }
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-5-title {
+                font-size: 1.1em;
+            }
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .col-5-title {
+                font-size: 1.3em;
+            }
+        }
+
+        .col-5-info {
+            line-height: 1.3;
+            margin: 0.2em 0 0;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-5-info {
+                font-size: 0.9em;
+                width: 14em;
+            }
+        }
+
+        @media screen and (max-width: @mobilePortraitBreakPoint) {
+            .col-5-info {
+                font-size: 1em;
+                padding: 0;
+                margin: 1em 0;
+                line-height: 1.5;
+                width: unset;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-column-5 {
+        justify-content: unset;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-column-5 {
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+    }
+}
+
+.care-column-6 {
+    margin: 5em 0 0;
+    display: grid;
+    grid-row-gap: 2em;
+
+    .col-6-paragraph {
+        max-width: 33em;
+    }
+
+    @media screen and (min-width: @iPadMiniBreakPoint) {
+        .col-6-paragraph {
+            max-width: unset;
+        }
+    }
+
+    .care-col-6 {
+        display: grid;
+        grid-template-columns: repeat(4, 20em);
+        grid-column-gap: 1.5em;
+        overflow: auto;
+        padding-bottom: 3em;
+        margin: 1em 0 0;
+        #hideScrollBar()
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .care-col-6 {
+            grid-template-columns: repeat(4, 18em);
+            margin: 0;
+        }
+    }
+
+    .col-6-block {
+        display: grid;
+        grid-row-gap: 1.3em;
+
+        .col-6-img {
+            width: 100%;
+            height: 12em;
+            box-shadow: 0px 0.1em 0.5em #0000001c;
+            border: 1px solid #D4D4D4;
+            border-radius: 1.5em;
+            object-fit: cover !important;
+            filter: grayscale(1);
+        }
+
+        .col-6-img:hover,
+        .col-6-img:focus {
+            filter: grayscale(0);
+        }
+
+        .col-6-title {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #000;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-6-title {
+                font-size: 1.2em;
+            }
+        }
+
+        .col-6-info {
+            font-size: 1em;
+            margin: -0.5em 0 0;
+            max-width: 18em;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-6-info {
+                font-size: 1em;
+                max-width: unset;
+            }
+        }
+    }
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .col-6-block {
+            grid-row-gap: 1em;
+        }
+    }
+}
+
+.care-column-7 {
+    margin: 9em 0 0;
+    display: grid;
+    justify-content: space-evenly;
+    grid-auto-flow: column;
+    align-items: center;
+
+    .col-7-img {
+        width: 40em;
+        height: 21em;
+        box-shadow: 0px 0.1em 0.5em #0000001c;
+        border: 1px solid #D4D4D4;
+        border-radius: 2em;
+        object-fit: cover !important;
+        filter: grayscale(1);
+    }
+
+    .col-7-img:hover,
+    .col-7-img:focus {
+        filter: grayscale(0);
+    }
+
+
+    @media screen and (max-width: @iPadMiniBreakPoint) {
+        .col-7-img {
+            width: 22em;
+            height: 16em;
+        }
+    }
+
+    @media screen and (max-width: @mobilePortraitBreakPoint) {
+        .col-7-img {
+            width: 100%;
+            grid-row: 1;
+        }
+    }
+
+    .sub-col-7 {
+        max-width: 26em;
+        display: grid;
+
+        .col-7-label {
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-7-label {
+                font-size: 1em;
+            }
+        }
+
+        .col-7-title {
+            margin: 0.5em 0 0;
+            font-weight: bold;
+            color: #000;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-7-title {
+                font-size: 1.5em;
+            }
+        }
+
+        .col-7-paragraph {
+            line-height: 1.3;
+            font-size: 1.2em;
+            margin: 0.8em 0 0;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-7-paragraph {
+                font-size: 1em;
+            }
+        }
+
+        .col-7-btn {
+            width: max-content;
+            font-size: 1em;
+            text-transform: uppercase;
+            margin: 1em 0 0;
+        }
+
+        @media screen and (max-width: @iPadMiniBreakPoint) {
+            .col-7-btn {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @iPadMiniBreakPoint) {
+    .care-column-7 {
+        grid-column-gap: 2em;
+        margin: 3em 0 0;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .care-column-7 {
+        grid-auto-flow: row;
+        grid-row-gap: 2em;
+        margin: 1em 0 0;
+    }
+}

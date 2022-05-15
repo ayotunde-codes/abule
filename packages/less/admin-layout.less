@@ -1,0 +1,21 @@
+@import (reference) './assets/variables.less';
+
+.adminApp_layoutContainer{
+    background: @gray-lighter;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+@media screen and (min-width: @iPadBreakPoint) {
+    body{
+        background: @gray-lighter;
+    }
+    
+    .adminApp_layoutContainer{
+        display: grid;
+        width: 100vw;
+        max-width: 1800px;
+        grid-template-columns: 20% 80%;
+    }
+}
+

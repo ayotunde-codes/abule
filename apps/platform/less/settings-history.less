@@ -1,0 +1,41 @@
+// out: false
+
+#historySettings {
+  width: 100%;
+  // background: none !important;
+
+
+  .history {
+    padding: 2em;
+    border-radius: 1em;
+    background: white;
+    // box-shadow: 0px 0.3em 0.5em #cfcfcf;
+    border: solid 1px @color-border-1;
+
+    .history-header {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.5em;
+      margin: 0 0 1.3em;
+    }
+
+    &:nth-child(1) {
+      margin-bottom: 2em;
+    }
+
+    @media screen and (max-width: @mobileBreakPoint) {
+      padding: 1.5em;
+
+      .history-header {
+        font-size: 1.18em;
+      }
+    }
+  }
+
+  .see-more p {
+    text-align: right;
+    padding-right: 4%;
+
+  }
+}

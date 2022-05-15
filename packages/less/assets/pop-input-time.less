@@ -1,0 +1,137 @@
+// out: false
+
+@pickerBorderRadius: 1.2rem;
+
+.pop-input-time {
+  position: relative;
+  width: max-content;
+
+  &-button {
+    .btn;
+    .btn-default;
+    .bordered;
+    .thin;
+    .no-shadow;
+    .__pill;
+    margin: 0;
+    font-weight: 400;
+
+  }
+
+
+  .pop-input-time-drop {
+    // min-width: 1em;
+    width: auto;
+    display: block;
+    background: white;
+    // padding: 1em;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      // padding-bottom: 0;
+
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: auto;
+
+        span {
+          line-height: 1;
+          margin-bottom: .5em;
+          opacity: .5;
+          text-align: left;
+          padding: 0 .5em;
+        }
+
+        input {
+          border: solid 1px @color-border-1;
+          margin: 0;
+          width: 5em;
+          padding: .6em;
+          border-radius: .8em;
+          font-size: 1em;
+
+          &:focus {
+            // border-color: rgb(48, 48, 48);
+            outline: none;
+          }
+        }
+
+        &.hour {
+          // margin-right: 1em;
+
+        }
+
+        &.period {
+
+          span {
+            opacity: 0;
+          }
+
+          button {
+            width: max-content;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+
+            margin: 0;
+            min-width: input[min-width];
+            width: max-content;
+            padding-left: 1em;
+            padding-right: $padding-left;
+            background: transparent;
+            font-weight: normal;
+            box-shadow: none;
+            height: 100%;
+            background: #ebebeb;
+
+          }
+        }
+      }
+
+      &.periods {
+        // margin: 0;
+        margin-bottom: 1em;
+
+        :nth-child(1) {
+          margin-right: 1em;
+        }
+      }
+    }
+
+    .pop-input-time-actions {
+      // background: blue;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      border-top: @border-seperator;
+      padding: 1em;
+      // #Padding.padding-bottom;
+      // #Padding.padding-left;
+      // #Padding.padding-right;
+
+
+      button {
+        margin: 0;
+        width: max-content;
+        min-width: 7em;
+        padding: 0.6em 1em;
+
+        &:nth-child(2) {
+          margin-left: 1em;
+
+          &:hover {
+            background: @color-11  !important;
+          }
+        }
+      }
+    }
+
+  }
+}

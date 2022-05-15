@@ -1,0 +1,219 @@
+.calendar-container {
+//   max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// for a single timeline of events with time and card
+.card-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: auto 2em;
+  width: 63%;
+  margin: 2em auto;
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    width: 100%;
+    // display:none;
+  }
+
+  @media only screen and (max-width: @mobilePortraitBreakPoint) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.time {
+  white-space: nowrap;
+  margin-right: 0.4em;
+}
+
+.event-display {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+
+  @media only screen and (max-width: @mobilePortraitBreakPoint) {
+    width: 100%;
+  }
+}
+
+//for toggle icon
+.calendar-toggle-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 63%;
+  margin: auto;
+
+  .calendar-toggler {
+    width: 12em;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: @mobilePortraitBreakPoint) {
+    width: 100%;
+    // background: red;
+    margin: 0;
+  }
+}
+
+.btn-event-click {
+  width: auto;
+  margin:0;
+}
+
+//for calendar card events
+.user-event {
+  background-color: fadeout(@color-gray, 80%);
+}
+
+.user-event-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 22em;
+  height: 8em;
+  overflow: hidden;
+  padding: 1em;
+  border-radius: 0.8em;
+  margin-right: 0.7em;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+h4 {
+  max-width: calc(100% - 5em);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.outer-kids {
+  width: auto !important;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.calendar-kids {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.event-kids {
+  display: flex;
+  margin: 0.5em 0;
+}
+
+.kid-color {
+  min-width: 7em;
+  height: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 1em;
+}
+
+.host-icon {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  top: 0.3em;
+  right: 0.3em;
+  border-radius: 0.7em;
+
+  & div {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0.6em 1.5em;
+  }
+
+  .host-icon-circle {
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0.3em;
+    left: 0.3em;
+  }
+}
+
+.event-description {
+  p {
+    margin: 0.5em 0;
+    white-space: nowrap;
+    height: auto;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+  }
+}
+
+.event-duration {
+  text-align: right;
+}
+
+//selecting date between calendars
+.calendar-date-container {
+  width: 20em;
+  height: auto;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  // background-color: green;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.calendar-show-off {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  // text-align:center;
+}
+
+.calendar-drop-down {
+  position: absolute;
+  z-index: 999;
+  top: 5em;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+//date timeline
+.date-timelines {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .arrows {
+    @media only screen and (max-width: @mobileBreakPoint) {
+      // width: 100%;
+      display: none;
+      color: red;
+    }
+  }
+}

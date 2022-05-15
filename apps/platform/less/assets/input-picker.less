@@ -1,0 +1,293 @@
+// out: false
+@itemPaddingTop: .3em;
+@itemPaddingLeft: .7em;
+@itemPadding: @itemPaddingTop @itemPaddingLeft;
+
+@sm_itemPaddingTop: 0.1em;
+@sm_itemPaddingLeft: 0.5em;
+@sm_itemPadding: @sm_itemPaddingTop @sm_itemPaddingLeft;
+
+.input-picker {
+  @paddingTop: 1em;
+  display: block;
+  // margin-bottom: 1.5em;
+  padding: 0;
+  text-align: left;
+  max-width: 100%;
+  overflow: hidden;
+  // overflow: hidden;
+
+  .input-picker-label {
+    text-align: left;
+    // padding: 0 1em;
+    padding: 0;
+    font-weight: 400;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    span {
+      display: inline;
+    }
+
+    .success {
+      color: @color-success;
+    }
+
+    .error {
+      text-transform: lowercase !important;
+      color: @color-danger;
+    }
+
+    .sliders {
+      display: grid;
+      grid-gap: .5em;
+      grid-auto-flow: column;
+      margin-left: .8em;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2em;
+        width: 2em;
+        height: $width;
+        // background: red;
+        // border: solid 1px @font-color;
+        border: solid 1px @color-border-1;
+        border-radius: 99999px;
+        cursor: pointer;
+        font-weight: 900;
+        font-size: .65em;
+
+        &.left {
+          &::before {
+            width: 1.2em;
+          }
+        }
+
+        &:not(.in-active) {
+          &:hover {
+            border-color: @font-color;
+          }
+        }
+
+
+        &.in-active {
+          opacity: .4;
+          cursor: not-allowed;
+        }
+      }
+
+      @media screen and (max-width: @iPadPortraitBreakPoint) {
+        display: none;
+      }
+    }
+
+  }
+
+  .input-picker-items {
+    // margin-bottom: -1em;
+    margin-top: -1em;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    #hideScrollBar();
+    color: inherit;
+    // gap: 1em 1em;
+    // grid-column-gap: 2em;
+
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(auto)); /* see notes below */
+    // grid-auto-flow: column;
+
+    .input-picker-items-row {
+      display: flex;
+      flex-wrap: wrap;
+      color: inherit;
+
+      .input-picker-item-container {
+        margin: 1em .5em 0 0;
+        width: max-content;
+        display: inline-flex;
+        align-items: center;
+
+        input {
+          margin: 0 0.6em 0 0;
+          accent-color: #383838;
+          // accent-color: rgb(192, 192, 192);
+        }
+
+        .input-picker-item {
+          color: inherit;
+          display: inline-flex;
+          padding: @itemPadding;
+          border: solid 1px @color-border-1;
+          justify-content: center;
+          align-items: center;
+          border-radius: 9999px;
+          font-weight: 300;
+          // text-transform: capitalize;
+          min-width: 4em;
+          background: #fff;
+          cursor: pointer;
+          font-size: 1em;
+          // overflow: hidden;
+
+          &.hide-border {
+            border: none !important;
+          }
+
+          &._new {
+            // cursor: text;
+            padding: 0;
+            font-weight: inherit;
+            overflow: hidden;
+
+            * {
+              font-size: 1em;
+            }
+
+            .new-copy {
+              position: absolute;
+              opacity: 0;
+              z-index: -9;
+              width: max-content;
+            }
+
+            .text {
+              padding: @itemPadding;
+              // cursor: text;
+              outline: none;
+              border: none;
+              width: 5em;
+              font-weight: inherit;
+            }
+
+            .icon {
+              display: flex;
+              padding-right: @itemPaddingLeft;
+              // font-weight: 900;
+              height: 100%;
+              align-items: center;
+
+              &.active {
+                opacity: .8;
+                font-weight: 900;
+
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+
+            &.focused {
+              border-color: black;
+            }
+          }
+
+          &:not(.hide-border) {
+
+
+            &.checked {
+              background: @color-9;
+            }
+
+            &.checked-secondary {
+              background: @color-3;
+              background: @color-11;
+            }
+
+            &.checked-ring {
+              background: white;
+              border: solid 1px black !important;
+            }
+
+            &.checked-black {
+              background: rgb(0, 0, 0) !important;
+              border: solid 1px black !important;
+              color: white !important;
+            }
+          }
+
+          &.error {
+            border-color: @color-danger;
+          }
+
+          &:first-child {
+            // margin-right: .8em !important;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &[data-disallow=true] {
+            opacity: .5;
+          }
+
+          @media only screen and (max-width: @mobileBreakPoint) {
+            padding: @sm_itemPadding;
+          }
+        }
+      }
+    }
+  }
+
+  .input-picker-actions {
+    // background: blue;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: @border-seperator;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+
+    button {
+      margin: 0;
+      width: max-content;
+      min-width: 7em;
+      padding: 0.6em 2em;
+
+      &:nth-child(2) {
+        &:hover {
+          background: @color-11  !important;
+        }
+      }
+    }
+  }
+
+  &.direction-right {
+
+    .input-picker-items {
+      .input-picker-items-row {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+      }
+    }
+  }
+
+  &.direction-down {
+
+    .input-picker-items {
+      .input-picker-items-row {
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-columns: max-content;
+      }
+    }
+  }
+
+  &.error {
+    .input-picker-items {
+      .input-picker-item {
+        border-color: @color-danger;
+      }
+
+    }
+  }
+}

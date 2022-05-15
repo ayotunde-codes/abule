@@ -1,0 +1,130 @@
+// out: false
+
+#admin {
+  .page-container;
+
+  .header {
+    font-size: 3em;
+    font-weight: 600;
+
+  }
+
+  .activities {
+    border: solid 1px @color-border-1;
+    border-radius: 1em;
+    overflow: hidden;
+    // padding: 1.5em 0;
+    margin-top: 4em;
+
+    table {
+      // background: blue;
+      border-collapse: collapse;
+      width: 100%;
+
+      tr {
+        padding: .6em;
+
+        td,
+        th {
+          padding: 1em 0;
+          text-align: left;
+
+
+          &:nth-child(1) {
+            padding-left: 2em;
+          }
+
+          &:last-child {
+            padding-right: 2em;
+          }
+        }
+
+        th {
+          border-bottom: solid 1px rgb(235, 235, 235);
+        }
+
+        &:not(.headers) {
+          &:hover {
+            cursor: pointer;
+            background: rgb(233, 233, 233);
+          }
+        }
+      }
+    }
+
+    .mobile-log {
+      padding: 1em 0;
+      border-bottom: solid 1px @color-border-1;
+
+      .details {
+        display: grid;
+        grid-auto-flow: row;
+        grid-gap: 1.2em;
+
+        .double-data {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: .5em;
+          justify-content: space-between;
+
+          overflow: hidden;
+
+          .data {
+            width: max-content;
+            max-width: 100%;
+          }
+
+          >:nth-child(2) {
+            text-align: right;
+          }
+        }
+
+        .data {
+          display: grid;
+          grid-auto-flow: row;
+          grid-gap: .1em;
+
+          >:nth-child(1) {
+            font-size: .75em;
+            font-weight: bold;
+            opacity: .4;
+            text-transform: uppercase;
+          }
+        }
+
+      }
+
+      .date {
+        margin-top: 1em;
+        font-size: .75em;
+        text-align: right;
+        opacity: .4;
+
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      padding: 1em;
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .header {
+      font-size: 2em;
+    }
+
+    .activities {
+      margin-top: 2em;
+    }
+
+  }
+}

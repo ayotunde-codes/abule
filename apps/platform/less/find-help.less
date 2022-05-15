@@ -1,0 +1,239 @@
+// out: false
+@import (reference) "./assets/iconpack.css";
+
+#findHelp:extend(#hostActivity all) {
+
+  // background: rgba(0, 0, 0, .6);
+  #barterRequestNotFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 1.6em;
+      opacity: .5;
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+  }
+
+  .page-header {
+    padding-left: 0;
+    padding-right: $padding-left;
+    padding-top: 2em;
+  }
+
+
+  .form-label {
+    .input-field.label;
+  }
+
+  .form-container {
+    @formGap: 3em;
+
+    .input {
+      resize: none;
+    }
+
+    .forms {
+
+      .form.left {
+        grid-gap: @formGap;
+
+      }
+
+      .form.right {
+        // grid-gap: @formGap;
+
+        .input-field {
+          margin: 0;
+
+          .label {
+            // display: none;
+          }
+
+          .input {
+            resize: none;
+            height: auto;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 1200px) {
+        grid-gap: 6%;
+        grid-auto-columns: 48% 46%;
+
+      }
+
+      @media only screen and (max-width: 900px) {
+        // grid-auto-columns: 40% 45%;
+
+      }
+
+      @media only screen and (max-width: @mobileBreakPoint) {
+        display: block;
+        // flex-direction: column-reverse;
+        // grid-auto-columns: 100%;
+
+
+        .form {
+          grid-gap: 2.5em;
+        }
+
+        .form.left {
+          // margin-bottom: .form[grid-gap];
+
+          #dayAndTime {
+
+            .content {
+              .option {
+                min-width: unset;
+
+              }
+            }
+          }
+        }
+
+        .form.right {
+
+          .input-field {
+
+            textarea.input {
+              height: 10em;
+            }
+          }
+        }
+      }
+    }
+
+    #description {
+      margin-top: 3em;
+
+      .input {
+        height: 20em;
+      }
+    }
+
+    &[type=driving] {
+      background-color: @color-3;
+    }
+
+    &[type=sitting] {
+      background-color: @color-14;
+    }
+
+    &[type=tutoring] {
+      background-color: @color-4;
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      padding: 1.5em;
+
+      .form {
+        &.right {
+          margin-top: @formGap;
+          display: grid;
+        }
+      }
+    }
+
+  }
+
+  #finHelpPickerUsersPopUp {
+    max-width: 500px;
+
+    .results {
+      .result {
+        .result-header {
+          font-weight: 600;
+          width: 100%;
+          background: inherit;
+          text-align: left;
+          margin: 1em 0 0;
+          display: flex;
+          border: none;
+          font-size: 1.1em;
+          cursor: pointer;
+          justify-content: space-between;
+          align-items: center;
+
+          .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            font-size: .85em;
+            transition: transform 150ms linear;
+
+            &:before {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              line-height: 1;
+
+            }
+
+          }
+        }
+
+        .result-list {
+          max-height: 30vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          margin-top: 1.3em;
+
+          .input-picker-items {
+            justify-content: center;
+
+            .result-item {
+              justify-content: left;
+
+              position: relative;
+              display: flex;
+              padding-top: .5em;
+              padding-bottom: $padding-top;
+              width: max-content;
+
+              img {
+                width: 2em;
+                height: $width;
+                border-radius: 100%;
+                margin-right: 1em;
+              }
+
+              span {
+                // position: absolute;
+                width: auto;
+
+                left: 0;
+                text-align: center;
+              }
+            }
+          }
+
+
+        }
+
+        &.close {
+          .result-header {
+            .icon {
+              transform: rotateZ(180deg);
+
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  #createBarterSelectRecipientType {
+    padding: 1em 2em;
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      padding: 0em 1em;
+
+    }
+  }
+}

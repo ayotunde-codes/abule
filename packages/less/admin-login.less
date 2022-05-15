@@ -1,0 +1,177 @@
+
+@import (reference) url('./assets/variables.less');
+
+.adminApp_container{
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: @gray-lighter;
+}
+
+.adminApp_message{
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    width:100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    &>div{
+        border: 1px solid #DFE0EB;
+        width: 95%;
+        max-width: 450px;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        padding: 30px 10px 60px;
+        text-align: center;
+        background: @white;
+        row-gap: 15px;
+        border-radius: @adminApp_borderRadius;
+        img{
+            width: 50px;
+            margin: auto;
+        }
+        span{
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        div{
+            font: 1.2rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.adminApp_main{
+    width: 95%;
+    margin: auto;
+    max-width: 530px;
+    display: grid;
+    row-gap: 20px;
+    place-items: center;
+    padding: 24px 0;
+    border-radius: @adminApp_borderRadius;
+    img{
+        width: 100%;
+        max-width: 200px;
+    }
+    .adminApp_logo{
+        margin: 20px 0;
+        padding: 30px;
+    }
+
+    .adminApp_header {
+        text-align: center;
+        display: grid;
+        row-gap: 5px;
+        margin-top: 8px;
+        h2, p{
+            margin: 0;
+            padding: 0;
+        }
+    }
+    
+    .adminApp_text_gray{
+        color:@gray
+    }
+
+    .adminApp_text_sm{
+        font-size: 12px;
+    }
+
+    .adminApp_text_semibold{
+        font-weight: 500;
+    }
+
+    .adminApp_text_bold{
+        font-weight: 700;
+    }
+
+    .adminApp_text_xs{
+        font-size: 10px;
+    }
+}
+
+.adminApp_form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    .adminApp_inputContainer{
+        display: grid;
+        row-gap: 3px;
+        .adminApp_label{
+            margin-top: 18px;
+            color:@gray;
+            font-size: 1.1em;
+            font-weight: 700;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            span{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-weight: 400;
+                color: @color-error;
+                img{
+                    width: 12px;
+                }
+            }
+        }
+        .adminApp_input{
+            padding: 8px 12px;
+            border: 1px solid @gray;
+            background: @gray-light;
+            border-radius: @adminApp_borderRadius;
+        }
+        .adminApp_inputError{
+            border-color: @color-error;
+        }
+        .adminApp_input:focus{
+            outline: none;
+        }
+    }
+    .adminApp_text_resetPassword{
+        align-self: end;
+        font-weight: 400;
+        display: flex;
+        justify-content: end;
+        cursor: pointer;
+        font-size: 1em;
+        color:@gray;
+        margin-top: 10px
+    }
+    .adminApp_formButton{
+        margin: 30px 0;
+        background: @amber;
+        border: 0;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0px 9px 22px rgba(243, 221, 16, 0.2);
+        border-radius: @adminApp_borderRadius;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint){
+    .adminApp_form{
+        .adminApp_inputContainer{            
+            .adminApp_input{
+                padding: 13px 12px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: @mobilePortraitBreakPoint){
+    .adminApp_main{
+        border: @formBorder;
+        background: @white;
+    }
+}

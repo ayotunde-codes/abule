@@ -1,0 +1,519 @@
+//out:false
+
+@borderRadius: 2em;
+
+.user-connect-card {
+  position: relative;
+  display: grid;
+  grid-auto-columns: 100% 100%;
+  grid-auto-flow: column;
+  width: 100%;
+  height: 100%;
+  padding: 0.75em 0.75em;
+  padding: 0em;
+  // padding-left: 1em;
+  border-radius: @borderRadius;
+  border: #333;
+
+  &:first-child {
+    padding: 0;
+  }
+  .selected-border {
+    border-color: #000 !important;
+  }
+
+  .name {
+    text-transform: capitalize;
+    margin: 0 0 0.2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    font-size: 1.25em;
+  }
+
+  .user-connect-card-content {
+    .hmv-element;
+    position: relative;
+    display: flex;
+    // box-shadow: 0px .25em .8em rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0.1em 0.5em #0000001c;
+    flex-direction: column;
+
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    // background: blue;;
+    top: 0;
+    left: 0;
+    text-align: left;
+    overflow: hidden;
+    border: solid 1px @color-border-1;
+
+    .details {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+
+      .main {
+        padding: 1em;
+
+        .mutual {
+          display: flex;
+          padding: 0;
+          margin: 0;
+          // justify-content: center;
+          align-items: center;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 100%;
+
+          .iLink {
+            margin-right: 0.6em;
+            // transform: rotate(45deg);
+          }
+
+          .description {
+            padding: 0;
+            margin: 0 0 0.4em;
+            font-style: italic;
+            text-decoration: underline;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        > .mutual {
+          justify-content: center;
+        }
+        .grid-none {
+          grid-column: none;
+        }
+
+        .distance {
+          margin-top: 0.6em;
+          margin-bottom: 0.6em;
+          opacity: 0.7;
+          font-style: italic;
+
+          .icon {
+            margin-right: 0.5em;
+          }
+        }
+
+        .top {
+          display: grid;
+          width: 100%;
+          max-width: 100%;
+          align-items: flex-start;
+          position: relative;
+          grid-auto-flow: column;
+          grid-gap: 0.7em;
+          width: 100%;
+          overflow: hidden;
+          grid-auto-columns: max-content auto;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6em;
+            height: 6em;
+            object-fit: cover;
+          }
+
+          .left {
+            display: inline-flex;
+
+            .avi {
+              display: flex;
+              width: 3.5rem;
+              height: $width;
+              border-radius: 9999px;
+              overflow: hidden;
+
+              img {
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+              }
+
+              &:nth-child(1) {
+                margin-left: 0;
+              }
+            }
+          }
+
+          .right {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+
+            > :nth-child(1) {
+              margin: 0;
+              line-height: 1.5;
+              font-weight: 600;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            > :nth-child(2) {
+              opacity: 0.7;
+              margin: 0;
+              font-weight: 300;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+
+        .bottom {
+          @padding: 0 1.5em;
+          display: grid;
+          grid-auto-flow: column;
+          margin-top: 0.6em;
+
+          .btn-container-user {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+            justify-content: space-between;
+            grid-template-columns: max-content;
+            grid-gap: 1em;
+
+            .action {
+              margin: 0;
+              width: 8em;
+              min-width: $width;
+              max-width: $width;
+              padding: 0.5em 0.6em;
+              border-radius: 9999px;
+
+              span {
+                // font-size: 1.2em;
+
+                &::first-letter {
+                  // text-transform: unset;
+                }
+              }
+
+              .icon {
+                margin-left: 0.5em;
+              }
+
+              &.disabled {
+                opacity: 0.5;
+              }
+            }
+
+            &.len-1 {
+              display: block;
+
+              .action {
+                width: 100%;
+                min-width: $width;
+                max-width: $width;
+              }
+            }
+          }
+
+          .more-actions {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.alert {
+      border: solid 2px @color-8;
+    }
+  }
+
+  .pop-message {
+    min-width: 850px;
+    max-width: $min-width;
+    padding: 0 2em;
+
+    .closer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -2em;
+      font-weight: 900;
+
+      .icon {
+        font-size: 1.5em;
+      }
+    }
+
+    .banner {
+      border-radius: 1em;
+      margin-top: 3em;
+      padding: 1.4em;
+      text-align: center;
+      background: @color-15;
+    }
+
+    @media only screen and(max-width: @mobileBreakPoint) {
+      min-width: 100%;
+      max-width: 100%;
+      padding: 0;
+
+      .closer {
+        font-size: 90%;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  &.flat {
+    // background: red;
+
+    .user-connect-card-content {
+      .details {
+        .main {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-columns: auto max-content;
+          align-items: center;
+          grid-gap: 0.7em;
+          padding: 0.5em;
+
+          .top {
+            grid-auto-columns: max-content auto;
+            align-items: center;
+
+            .right {
+              align-items: center;
+              display: grid;
+              grid-auto-flow: column;
+              grid-template-columns: repeat(4, 1fr);
+              // justify-content: space-evenly;
+
+              .name,
+              .mutual .description,
+              .distance {
+                margin: 0;
+              }
+            }
+          }
+
+          .bottom {
+            grid-gap: 0.7em;
+            align-items: center;
+            margin: 0;
+
+            .more-actions {
+              .controller {
+                font-weight: 800;
+                padding: 0.5em;
+                font-size: 1.6em;
+                cursor: pointer;
+
+                padding: 0.35em;
+                font-size: 1.3em;
+              }
+
+              .dropdown {
+                padding: 1em;
+
+                .distance,
+                .mutual {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1500px) {
+    &-content {
+      .actions {
+      }
+
+      .details {
+        .avi {
+          font-size: 4em;
+        }
+
+        .title {
+          margin-top: 0.5em;
+          font-size: 2em;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .content {
+      .actions {
+      }
+
+      .details {
+        .avi {
+          font-size: 4em;
+        }
+
+        .title {
+          // font-size: 2em;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    &.flat[type="friendRequest"] {
+      .user-connect-card-content {
+        .details {
+          .main {
+            .top {
+              .right {
+                grid-template-columns: repeat(3, 1fr);
+
+                .mutual {
+                  display: none;
+                }
+              }
+            }
+
+            .bottom {
+              .btn-container-user {
+                .action {
+                  &:nth-child(2) {
+                    display: none;
+                  }
+                }
+              }
+
+              .more-actions {
+                display: block;
+
+                .dropdown {
+                  .mutual {
+                    display: flex;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 890px) {
+    &.flat {
+      .user-connect-card-content {
+        .details {
+          .main {
+            .top {
+              .right {
+                grid-template-columns: repeat(3, 1fr);
+
+                .mutual {
+                  display: none;
+                }
+              }
+            }
+
+            .bottom {
+              .more-actions {
+                display: block;
+
+                .dropdown {
+                  .mutual {
+                    display: flex;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .name {
+      font-size: 1.18em;
+    }
+
+    &.flat {
+      .user-connect-card-content {
+        box-shadow: none;
+        border: none;
+
+        .details {
+          .main {
+            padding: 0;
+
+            .top {
+              .left {
+                .avi {
+                  &:nth-child(1) {
+                    width: 3rem;
+                    height: $width;
+                  }
+                }
+              }
+
+              .right {
+                grid-auto-flow: row;
+                grid-template-columns: repeat(1, 1fr) !important;
+
+                .distance {
+                  display: none;
+                }
+              }
+            }
+
+            .bottom {
+              .btn-container-user {
+                .action {
+                  width: 6em;
+                  min-width: $width;
+                  max-width: $width;
+                }
+              }
+
+              .more-actions {
+                .controller {
+                  padding: 0.35em;
+                  font-size: 1.3em;
+                }
+
+                .dropdown {
+                  .distance {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mutual-friends-pop-up-container {
+  min-width: 25em !important;
+
+  #mutualFriendsPopUp {
+    #profileSetUp #updateInterestsPopUp;
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    min-width: 100% !important;
+  }
+}

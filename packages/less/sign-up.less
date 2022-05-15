@@ -1,0 +1,104 @@
+// out: false
+
+#signUpPage {
+  width: 100%;
+  background: rgb(236, 236, 236);
+  
+  .container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50% 50%;
+    padding-top: 3em;
+    padding-bottom: $padding-top;
+
+    >section {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      &.left {
+        a{
+          position: absolute;
+          color: white;
+          z-index: 1;
+          font-size: 1.3em;
+          top: .6em;
+          left: .8em;
+          line-height: 1;
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        }
+
+      }
+
+      &.right {
+        background: white;
+        padding: 4em;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        overflow: hidden;
+
+        h1 {
+          margin: 0 0 .3em;
+        }
+
+        #accountType {
+          width: 100%;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: 1fr 1fr;
+          grid-gap: 1em;
+          padding: 0 2em;
+          margin-bottom: 2em;
+
+          .account-type {
+            border-radius: 5px;
+            border: solid 2px #f0f0f0;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+              width: 100%;
+              height: auto;
+            }
+
+            .title {
+              justify-self: flex-end;
+              display: inline-block;
+              margin: .3em 0 0;
+              text-align: center;
+            }
+          }
+        }
+
+        #agreement{
+          display: grid;
+          grid-auto-columns: max-content;
+          grid-gap: 1em;
+          align-items: center;
+          // justify-content: center;
+          grid-auto-flow: column;
+          margin-bottom: 4em;
+        }
+
+        #signUpBtn{
+          width: 100%;
+          box-shadow: 0px .35em 1em #b3b3b3;
+        }
+      }
+    }
+  }
+
+
+}

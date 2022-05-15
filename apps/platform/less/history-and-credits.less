@@ -1,0 +1,81 @@
+@min-width: 300px;
+
+.history-container {
+  h1 {
+    margin: 0 0 4rem 0;
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      text-align: center;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// .type-picker{
+//   background: red !important;
+// }
+
+// .checked{
+//   background-color:#fff !important;
+//   border:1px solid #000 !important;
+// }
+
+.history-type,
+.history-filters {
+  margin: 1em auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*
+
+this styling contains 
+the credit part of history below
+and the main history above
+
+*/
+
+.settings-credit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    width: 100%;
+  }
+
+}
+
+.settings-history {
+  padding: 2%;
+  // background-color: #fff;
+  border-radius: 1.5em;
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 3em;
+}
+
+.setting-history-table {
+  // min-width:@min-width;
+  width: 100%;
+  table-layout: auto;
+
+}
+
+.settings-table-body-cell {
+  padding: 3% 5%;
+  width: auto;
+}
+
+.see-more p {
+  text-align: right;
+  padding-right: 4%;
+
+}

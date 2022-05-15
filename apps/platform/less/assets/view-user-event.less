@@ -1,0 +1,109 @@
+// out: false
+@import (reference) "../batering-request.less";
+
+#viewUserEvent {
+  .batering-request.pop-message;
+  min-width: 10em;
+  max-width: 500px;
+  padding: 0;
+
+  .title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .date {
+    font-size: 1.6em;
+
+    .day {
+      .timberline-font;
+      text-transform: capitalize;
+    }
+
+    .month {
+      font-weight: 600;
+      font-size: .8em
+    }
+  }
+
+  .frequency {
+    font-style: italic;
+    font-size: 1.1em;
+    margin: .8em 0 2em;
+    font-weight: 200;
+  }
+
+  .header {
+    .batering-request.header;
+    // margin-top: 3em;
+    // .timberline-font;
+
+  }
+
+
+  .locations {
+    margin: 1.3em 0;
+    width: 100%;
+    text-align: left;
+
+    .type {
+      font-weight: 400;
+    }
+
+    .content {
+      display: grid;
+      grid-auto-flow: column;
+      width: 100%;
+
+      .location {
+        .info {
+          text-transform: capitalize
+        }
+      }
+
+    }
+  }
+
+  .special-instructions {
+    text-align: left;
+
+    .content {
+      display: grid;
+      grid-gap: 1em;
+
+      .special-instruction {
+        .kid-name {
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+
+        .instruction {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .contact-holder {
+    text-align: left;
+
+    table {
+      border-spacing: 0;
+
+      tbody {
+        tr {
+          td {
+            text-transform: capitalize;
+            padding: 0 0 .3em;
+
+            &:nth-child(1) {
+              font-weight: 400;
+              padding-right: 0.4em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

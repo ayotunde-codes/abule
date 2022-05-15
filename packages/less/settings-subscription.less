@@ -1,0 +1,83 @@
+//out: false
+
+#subscriptionSettings {
+  width: 100%;
+  // background: pink !important;
+
+
+  .pricing {
+    margin: 1em auto;
+    display: grid;
+    width: 100%;
+    grid-auto-columns: 47%;
+    grid-auto-flow: column;
+    overflow: hidden;
+    overflow-x: auto;
+    grid-gap: 1em;
+    padding-bottom: 1em;
+
+    @media only screen and (max-width: @iPadPortraitBreakPoint) {
+      grid-auto-columns: 46%;
+      #hideScrollBar();
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      grid-auto-columns: 92%;
+      grid-gap: .6em;
+
+    }
+  }
+
+
+  .history-type,
+  .history-filters {
+    margin: 1em auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+
+  .settings-credit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      width: 100%;
+    }
+
+  }
+
+  .settings-history {
+    padding: 2%;
+    // background-color: #fff;
+    border-radius: 1.5em;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 3em;
+  }
+
+  .setting-history-table {
+    // min-width:@min-width;
+    width: 100%;
+    table-layout: auto;
+
+  }
+
+  .settings-table-body-cell {
+    padding: 3% 5%;
+    width: auto;
+  }
+
+  .see-more p {
+    text-align: right;
+    padding-right: 4%;
+
+  }
+}

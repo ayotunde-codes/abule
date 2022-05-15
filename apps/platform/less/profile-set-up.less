@@ -1,0 +1,586 @@
+// out: false
+@import (reference) "./assets/iconpack.css";
+
+#profileSetUp {
+  // background: rgba(0, 0, 0, .6);
+  .page-container;
+
+  @sectionHeaderFontSize: 1.3em;
+
+  .section-header {
+    // .input-field>.label;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 800;
+    font-weight: 700;
+    margin: 0 0 .8em;
+
+    h1 {
+      font-size: @sectionHeaderFontSize;
+      text-align: left;
+      font-weight: inherit;
+      margin: 0;
+    }
+  }
+
+  .select-label {
+    margin: 1.6rem 0 0;
+    font-weight: 400;
+
+    .Error {
+      font-weight: 700;
+    }
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+    // background: red;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: inherit;
+
+      .title {
+        margin-top: 0;
+        margin-bottom: 1em;
+      }
+
+    }
+
+    .right {
+      // background: blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: inherit;
+
+      #profileImage {
+        position: relative;
+        border: solid 2px transparent;
+        border-radius: 9999px;
+        cursor: pointer;
+        // overflow: hidden;
+
+        .avi {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 16em;
+          height: $width;
+          background: #f0f0f0;
+          border-radius: inherit;
+
+          img {
+            position: absolute;
+            border-radius: inherit;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-color: transparent !important;
+            border-image-width: 0;
+            outline: none;
+          }
+
+          span,
+          .default-image {
+            font-size: 5em;
+          }
+
+          .outer {
+            position: absolute;
+            top: 100%;
+            opacity: .15;
+            font-size: 3em;
+
+            margin-top: -.9em;
+            margin-left: 1.3em;
+            display: flex;
+            text-shadow: 0px 0px 2px white;
+
+            &.dark {
+              opacity: 1;
+              // color: black;
+            }
+          }
+
+          input {
+            visibility: hidden;
+            position: absolute;
+            z-index: -9999;
+          }
+        }
+
+        .uploading {
+          // background: rgba(0, 0, 0, 0.151);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            color: white;
+            font-size: 3.5em;
+            text-shadow: 0 0 4px #777;
+
+          }
+
+        }
+
+      }
+
+      .error {
+        // display: none;
+        text-align: center;
+        margin-top: 1em;
+        color: @color-error;
+        font-weight: 400;
+      }
+
+      &.error {
+        #profileImage {
+          border: solid 2px @color-error;
+
+          .outer {
+            color: @color-error;
+
+          }
+        }
+
+        .error {
+          display: inline-block;
+          color: @color-error;
+          font-weight: bold
+        }
+      }
+    }
+  }
+
+  .set-up-form-label {
+    .timberline-font;
+    margin: 3rem 0 0;
+    margin-bottom: #pageHeader[margin-bottom];
+    line-height: 1;
+
+    >:nth-child(1) {
+      font-size: 1.4em;
+    }
+
+    &.public {
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: @mobileBreakPoint) {
+      text-align: center;
+
+    }
+  }
+
+  .set-up-form,
+  .private-form {
+    padding: 2em 2em;
+  }
+
+  .set-up-form {
+    margin-top: 1em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 2em;
+    background: @color-4;
+
+    .form {
+      // border: solid 1px @color-border-1;
+      display: flex;
+      padding: 0;
+      flex-direction: column;
+      text-align: left;
+
+      .double-field {
+        display: grid;
+        grid-gap: 1em;
+        grid-auto-flow: column;
+      }
+
+      .input-picker {
+        margin-bottom: 0;
+      }
+
+      .left,
+      &.right {}
+
+      &.left {
+        width: 35%;
+
+        .input-field {
+          margin-bottom: 2em;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &.about {
+            margin-top: 2em;
+
+            .label {
+              padding: 0;
+
+              span {
+                text-transform: uppercase;
+                height: max-content;
+              }
+            }
+
+            textarea {
+              height: 11em;
+              overflow: hidden;
+              text-align: left;
+
+              @media screen and (max-width: @mobileBreakPoint) {
+                height: 14em;
+
+              }
+            }
+
+            &>:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+
+      }
+
+      &.right {
+        width: 50%;
+
+        .input-field {
+          margin-bottom: 2em;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &.about {
+            // margin-bottom: 3em;
+
+            .label {
+              span {
+                text-transform: uppercase;
+                height: max-content;
+              }
+            }
+
+            textarea {
+              height: 16em
+            }
+
+            &>:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+
+        #userInterests,
+        #userCoreValues {
+          .update-btn {
+            margin: 1em 0 0;
+          }
+        }
+
+        #userCoreValues {
+          margin-bottom: 2em;
+
+
+          @media screen and (max-width: @mobileBreakPoint) {
+            margin-bottom: 0;
+          }
+        }
+
+
+        #userInterests,
+        #colorPicker,
+        .input-field.about {
+          text-align: left;
+
+          .label {
+            font-size: 1.5em;
+          }
+
+
+        }
+
+        section {
+
+          .top {
+            margin-bottom: .8em;
+          }
+
+          .section-header {
+            padding: 0;
+          }
+
+          &.spaced-section {
+            margin-top: 3.6em;
+
+          }
+        }
+
+      }
+
+
+    }
+
+    &.private {
+      background: @color-13;
+    }
+  }
+
+
+  #availability {
+    // #kidsProfile;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
+    overflow: auto;
+    padding: 1px 0;
+    margin-top: 2em;
+    #hideScrollBar();
+
+    @media screen and (max-width: @mobileBreakPoint) {
+      grid-gap: 1em;
+    }
+
+
+    .support-preview {
+      // box-shadow: .hmv-element[box-shadow];
+    }
+  }
+
+  #addLearner {
+    text-align: left;
+    margin-top: 4em;
+    margin-bottom: 4em;
+
+    >.title {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0 0 1em;
+
+      >:nth-child(1) {
+        font-family: "Timberline";
+        line-height: 1;
+        margin: 0;
+      }
+    }
+
+    #kidsProfile {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 22.5%;
+      grid-gap: 2%;
+      // padding-bottom: 1em;
+      overflow: auto;
+      #hideScrollBar();
+
+      >.placeholder {
+        display: flex;
+        width: max-content;
+      }
+
+      .kid-profile.__create {
+        .content {
+          background: rgba(212, 212, 212, 0.2);
+
+          .icon {
+            font-size: 4em;
+          }
+        }
+      }
+
+      @media screen and (max-width: @iPadPortraitBreakPoint) {
+        grid-auto-columns: 30.5%;
+
+      }
+
+      @media screen and (max-width: @mobileBreakPoint) {
+        grid-auto-columns: 44.5%;
+        grid-gap: 4%;
+
+      }
+
+
+      @media screen and (max-width: @mobilePortraitBreakPoint) {
+        grid-auto-columns: 90.5%;
+
+      }
+
+    }
+
+  }
+
+  #updateInterestsPopUp {
+    max-width: 450px;
+
+    .title {
+      margin-bottom: 2em;
+
+      .label {
+        font-size: 2em;
+        font-weight: 600;
+      }
+
+      .sub {
+        margin-top: 2em;
+
+        &.Error {
+          font-weight: 600;
+        }
+
+        &.help-info {
+          font-style: italic;
+        }
+      }
+    }
+
+    .pickers {
+      display: grid;
+      grid-gap: 1.8em;
+      // margin-bottom: 2em;
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      max-width: 100%;
+
+      .title {
+        font-size: .8em;
+      }
+    }
+  }
+
+  .proceed-btn {
+    width: max-content;
+    width: 10em;
+    margin: 4em auto 0;
+
+    >:nth-child(1) {
+      margin-right: .3em;
+
+      .timer {
+        margin-left: .3em;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1500px) {
+    #addLearner {}
+  }
+
+  @media screen and (max-width: 1200px) {
+    .set-up-form {
+      .form {
+        &.left {
+          width: 40%;
+        }
+      }
+    }
+
+    #addLearner {}
+  }
+
+  @media screen and (max-width: @mobileBreakPoint) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      .left {
+        margin-bottom: 2em;
+        align-items: center;
+        height: inherit;
+
+        h1 {
+          margin-top: 0;
+          text-align: center;
+          margin-bottom: 1em;
+        }
+
+
+      }
+    }
+
+    .set-up-form {
+      // padding-top: 3em;
+      flex-direction: column;
+
+      .form {
+
+        &.left,
+        &.right {
+          width: 100%;
+
+          section {
+            margin-top: 3em;
+          }
+        }
+
+        &.right {
+          // margin-top: 3em;
+
+          .input-field {
+
+            .label {
+              .input-field.label;
+
+              span {
+                font-size: 1em;
+                text-transform: capitalize;
+              }
+            }
+
+          }
+
+          #userSupport {}
+
+          #userCoreValues {
+            // margin-top: 0 !important;
+          }
+
+        }
+
+      }
+    }
+
+    #addLearner {
+      margin-top: 4em;
+
+    }
+
+  }
+
+  @media only screen and (max-width: @mobilePortraitBreakPoint) {
+
+    #addLearner {
+      >.title {
+        >:first-child {
+          text-align: left;
+
+        }
+      }
+    }
+
+  }
+
+
+}

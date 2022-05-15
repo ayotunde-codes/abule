@@ -1,0 +1,48 @@
+//out: false
+
+.people-list {
+  .user {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1em;
+    grid-auto-columns: max-content auto;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 1px @color-border-1;
+    padding: 1em 0;
+    cursor: pointer;
+
+    .avi {
+      display: flex;
+      width: 3.5rem;
+      height: $width;
+      border-radius: 9999px;
+      overflow: hidden;
+
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+      }
+
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+// out: false
+
+.user-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .avi {
+    position: relative;
+    width: 8em;
+    height: $width;
+    border-radius: 99999px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em 2em;
+    background: white;
+    border-radius: 2em;
+    box-shadow: 0px .3em .8em rgba(71, 71, 71, 0.212);
+    margin: 2em 0 0;
+
+    .name {
+      margin: 0 0 .2em;
+      text-transform: capitalize;
+    }
+
+    .location {
+      margin: 0;
+    }
+
+    .supports {
+      display: flex;
+      grid-gap: 1.5em;
+      flex-wrap: wrap;
+      margin: 1.2em 0;
+
+      .support {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .label {
+          text-transform: uppercase;
+          margin: .5em 0 0;
+        }
+      }
+    }
+
+    .interests {
+      text-align: center;
+      margin: 0 0 2em;
+
+    }
+
+    .rating {
+      display: flex;
+      grid-gap: 1em;
+      margin: 0 0 1.5em;
+
+      .star {
+        font-size: 1.5em;
+      }
+    }
+
+    .actions {
+      display: grid;
+      grid-gap: 1em;
+      width: 80%;
+
+      .action {
+        width: max-content;
+        margin: 0;
+        width: 100%;
+
+        .icon {
+          margin-left: .5em;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .avi {
+      width: 6em;
+      height: $width;
+    }
+  }
+}

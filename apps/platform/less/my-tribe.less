@@ -1,0 +1,296 @@
+//out: false
+@import (reference) "./calendar.less";
+
+#addNewMember {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 46vh;
+  overflow: auto;
+
+
+  .users-input-picker {
+    overflow: auto;
+    overflow: auto;
+
+    .search-bar {
+      width: calc(100% - 1em);
+      margin-left: 0.5em;
+    }
+
+    .users-input-picker-list {
+      overflow: unset;
+
+      .input-picker-items {
+        .input-picker-items-row {
+          padding: 0 0.5em 1em;
+
+        }
+
+      }
+    }
+  }
+
+}
+
+
+#myHub {
+  #myTribe {
+
+    #tribeFilter {
+      padding: 0;
+
+    }
+
+    .tribe-description {
+      opacity: .6;
+      margin-bottom: 1em;
+    }
+
+
+    .people-header {
+      font-weight: 700;
+      font-size: 1.1em;
+      margin-bottom: .9em;
+      margin-top: 2em;
+    }
+
+    .people-container:extend(#people .people-container all) {
+      padding: 0 !important;
+
+      &.rows {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5em;
+      }
+    }
+
+
+
+
+    .content-label-and-actions {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      grid-auto-columns: auto max-content;
+      grid-gap: 4em;
+      // justify-content: space-between;
+
+      >.left,
+      >.right {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+
+      }
+
+      >.left {
+        justify-content: space-between;
+
+        .more-actions {
+
+          .controller {
+            font-size: 2em;
+            cursor: pointer;
+
+            padding: 0.2em;
+          }
+
+          .dropdown {
+            padding: 1em;
+
+            .distance,
+            .mutual {
+              display: none;
+            }
+          }
+        }
+
+      }
+
+      >.right {
+        grid-gap: 3em;
+
+
+        .view-toogle {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: .5em;
+
+          .icon {
+            color: @color-border-1;
+            font-size: 1.5em;
+            border: solid 1px;
+            padding: .2em;
+            border-radius: .2em;
+            cursor: pointer;
+
+            &.active {
+              color: inherit;
+            }
+          }
+        }
+      }
+
+      .all-group-label {
+        font-weight: 600;
+        font-size: 1.3em;
+
+        @media only screen and (max-width: @mobileBreakPoint) {
+          font-size: 1.2em;
+
+        }
+      }
+
+      .create-group {
+        #calendar .actions .new-calendar-event;
+        width: max-content;
+        margin: 0
+      }
+
+      .search-bar {
+        width: max-content;
+        height: max-content;
+      }
+
+      &.groups {
+        margin-bottom: 2em;
+
+        .all-group-label {
+          display: none;
+
+          @media only screen and (max-width: @mobileBreakPoint) {
+            display: block;
+          }
+        }
+      }
+
+      &.pending {
+        margin-top: 2em;
+      }
+
+      @media only screen and (max-width: @mobileBreakPoint) {
+        >.left {
+          // display: none;
+        }
+
+      }
+    }
+
+
+    .main-content {
+      margin-top: 1em;
+      display: grid;
+      grid-gap: 2em;
+
+      .label {
+        font-weight: 700;
+        // font-size: 17.75px;
+
+        @media only screen and (max-width: @mobileBreakPoint) {
+          // font-size: 1.15em;
+        }
+      }
+
+      .overflow-content-container {
+        margin-top: 0;
+      }
+
+
+      .activity-group-container {
+        .activity-group-header {
+          padding: 0;
+
+          .label {
+            font-size: 1.275em;
+            font-weight: 700;
+
+            @media only screen and (max-width: @mobileBreakPoint) {
+              font-size: 1.1em;
+            }
+          }
+        }
+
+        >.content {
+          padding: 0;
+        }
+      }
+
+      .tribe-group {
+        // background: red;
+        // margin-top: 5em;
+
+        &-title {
+          .page-container;
+          // background: @color-9;
+          // text-align: center;
+          text-transform: uppercase;
+          margin-top: .6em;
+          margin-bottom: 1.5em;
+          font-weight: 300;
+          padding-left: 3rem;
+
+          span {
+            padding: .5em 1em;
+            background: @color-8;
+            background: #8c8c8c;
+            color: white;
+            border-radius: .6em;
+            display: inline-block
+          }
+        }
+
+        &-list-container {
+          // overflow: hidden;
+        }
+
+        &-list {
+          #tribeGroupList();
+        }
+      }
+
+      .empty_group {
+        width: auto;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        margin: 2em 0 0;
+        text-align: center;
+        font-weight: 400;
+
+        p {
+          font-size: 1.1em;
+          margin: .6em 0;
+        }
+      }
+    }
+
+    @media only screen and (max-width: @iPadPortraitBreakPoint) {
+      .hub_tribe_container {
+        .tribe_box {
+          width: 33.3%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: @iPadMiniBreakPoint) {
+
+      .hub_tribe_container {
+        .tribe_box {
+          width: 50%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      .main-content {
+        // margin-top: .8em;
+      }
+
+    }
+
+    &.group {
+      .main-content {
+        display: block;
+      }
+    }
+  }
+}

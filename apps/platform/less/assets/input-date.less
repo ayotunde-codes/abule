@@ -1,0 +1,33 @@
+//out:false
+
+.input-date {
+  position: relative;
+  width: 100%;
+
+  .input-date-preview {
+    padding: .input-field .input .input-element[padding];
+    font-weight: inherit;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1em;
+    grid-template-columns: auto max-content;
+    width: 100%;
+    justify-content: space-between;
+    .no-shadow;
+
+    .icon {
+      color: @font-color;
+    }
+
+    &.placeholder {
+      color: @color-placeholder  !important;
+    }
+
+    &.placeholder,
+    &[readonly] {
+      background: white !important;
+    }
+
+
+  }
+}

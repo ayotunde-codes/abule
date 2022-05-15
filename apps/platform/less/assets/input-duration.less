@@ -1,0 +1,48 @@
+// out: false
+
+.duration {
+  font-weight: normal;
+
+  .duration-content {
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    grid-gap: .5em;
+    min-width: 13em;
+    height: max-content;
+    font-weight: normal;
+    cursor: initial;
+    .no-shadow;
+
+    .cntrl {
+      line-height: .8;
+      opacity: .3;
+      font-weight: 900;
+      background: none;
+      padding: 0;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5em;
+
+      &:hover {
+        opacity: 1 !important;
+
+      }
+    }
+
+
+    &:hover {
+      .controllers {
+        .cntrl {
+          opacity: .5;
+
+        }
+      }
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      min-width: 11em;
+    }
+  }
+}

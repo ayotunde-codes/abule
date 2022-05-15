@@ -1,0 +1,78 @@
+// out: false
+
+#notifications {
+  #activities;
+
+  .filters {
+    .page-container;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto max-content;
+    grid-gap: 3em;
+
+    #markAll {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      grid-auto-flow: row;
+      grid-gap: 1em;
+
+    }
+  }
+
+  .main-content {
+    .page-container;
+    display: grid;
+    grid-gap: 1.2em;
+    margin-top: 2em;
+
+    .notification {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: auto max-content;
+      grid-gap: 2em;
+      box-shadow: 0px 0.15em 0.6em #c7c7c7;
+      padding: 1.4em 1em;
+      border-radius: 1em;
+      cursor: pointer;
+      // font-weight: bold;
+      background: fadeout(@color-1, 92%);
+
+      border: solid 1px transparent;
+
+      .info {}
+
+
+      &.read {
+        background: none;
+        font-weight: inherit;
+      }
+
+      &:hover {
+        // background: rgb(243, 243, 243);
+        border-color: black;
+      }
+
+    }
+
+    @media only screen and (max-width: @mobilePortraitBreakPoint) {
+      grid-gap: 1em;
+      margin-top: 1em;
+
+      .notification {
+        grid-auto-flow: row;
+        grid-gap: .6em;
+
+        .date-time {
+          font-size: .9em;
+          text-align: right;
+          opacity: .7;
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,41 @@
+// out: false
+
+.input-select {
+  // background: red;
+  // .hmv-element;
+  // padding: 1em;
+  width: 100%;
+
+  .input-select-list {
+    // border: solid 1px @color-border-1;
+    border-radius: 999999em;
+    background: #F0F0F0;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    overflow: hidden;
+    padding: .5em;
+
+    .input-select-item {
+      padding: .4em 1em;
+      text-align: center;
+      border-radius: 999999em;
+      // background: red;
+      cursor: pointer;
+
+      &.active {
+        background: rgb(255, 255, 255);
+        // color: white;
+        box-shadow: 0px 0px .35em rgba(0, 0, 0, 0.11)
+      }
+
+      &.disabled {
+        opacity: .4;
+      }
+    }
+
+  }
+
+
+}

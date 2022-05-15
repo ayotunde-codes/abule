@@ -1,0 +1,56 @@
+.faq {
+  & > p {
+    text-align: center;
+  }
+  & > p > a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .back-a {
+    .back-btn {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      p {
+        margin: 0;
+      }
+      img {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+      @media only screen and (max-width: @mobileBreakPoint) {
+        margin-left: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .faq-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: @mobileBreakPoint) {
+      justify-content: center;
+    }
+    & > div:first-child {
+      h1, h4 {
+        text-align: left;
+        @media only screen and (max-width: @mobileBreakPoint) {
+          text-align: center;
+        }
+      }
+      h4 {
+        font-weight: 300;
+      }
+    }
+    & > div:last-child {
+      img {
+        width: 40rem;
+      }
+      @media only screen and (max-width: @mobileBreakPoint) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+// out: false
+
+.inputFieldConstructor {
+  display: block;
+  margin-bottom: 1.5em;
+  position: relative;
+
+  .label {
+    text-align: left;
+    // padding: 0 1em;
+    padding: 0;
+    font-weight: 400;
+
+    span {
+      display: inline;
+    }
+
+    .success {
+      color: @color-success;
+    }
+
+    .error {
+      text-transform: lowercase !important;
+      color: @color-danger;
+    }
+  }
+
+  textarea.input-element {
+    height: 8em;
+    text-align: left;
+  }
+
+  select.input {
+    option {
+      padding-top: 1em;
+      padding-bottom: $padding-top;
+    }
+  }
+
+  .input {
+    padding: 0;
+    display: flex;
+
+    * {
+      font-size: inherit
+    }
+
+    &.error {
+      border: solid 1px @color-danger;
+    }
+
+    .input-element {
+      width: 100%;
+      padding: .hmv-element[padding];
+      border-radius: .hmv-element[border-radius];
+      border: none;
+      outline: none;
+      width: 100%;
+    }
+
+    .left-icon {
+      padding: .hmv-element[padding];
+      padding-right: 0;
+      cursor: pointer;
+    }
+
+    .right-icon {
+      padding: .hmv-element[padding];
+      padding-left: 0;
+      cursor: pointer;
+    }
+  }
+
+
+  .input-field-dropdown {
+    &:extend(.hmv-dropdown .hmv-dropdown-content .hmv-dropdown-content-fg);
+    position: absolute;
+    // position: fixed;
+    overflow: hidden;
+    margin-top: @dropdownGap;
+    width: 100%;
+    z-index: 999;
+    top: unset !important;
+
+    .dropdown-input {
+      .hmv-element;
+      .input;
+      width: 100%;
+      border: solid 1px @color-border-1;
+      outline: none;
+      padding: .8em .8em;
+      box-shadow: none;
+    }
+
+    .dropdown-options {
+      position: relative;
+      max-height: 20rem;
+      overflow: auto;
+
+      .dropdown-option {
+        display: grid;
+        flex-direction: column;
+        text-align: left;
+        padding: .8em 1em;
+        cursor: pointer;
+        line-height: 1.3;
+
+        div {
+
+          &.text-right {
+            text-align: right;
+          }
+
+          &.smaller {
+            opacity: .8;
+            font-size: .6em;
+          }
+
+          &.hide {
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+
+        &:hover {
+          background: @element-focus-color;
+        }
+      }
+
+      &.loading {
+        height: 8em;
+
+        >* {
+          font-size: .6em;
+        }
+      }
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {}
+  }
+}
+
+.input-field {
+  .inputFieldConstructor;
+}

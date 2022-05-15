@@ -1,0 +1,765 @@
+@import (reference) './assets/variables.less';
+
+@black_alt: #121212;
+
+.adminApp_listPage_container{
+    display: grid;
+    padding: 10px;
+}
+
+.adminApp_listPage_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminApp_listPage_header, .adminApp_filter_container{
+    margin-bottom: 18px;
+    .adminApp_details{
+        display: none;
+        align-items: center;
+        column-gap: 10px;
+        .adminApp_detailsImage{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: @gray-200;
+            .black-fill{
+                fill: #000;
+            }
+        }
+        grid-template-columns: repeat(3, auto);
+        .adminApp_details_role{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2px;
+            font-size: 12px;
+            .adminApp_name{                
+                max-width: 150px;
+                font-weight: 600;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .plus_icon{
+        margin-right: 2px;
+    }
+    .adminApp_buttonExport{
+        background: @amber;
+        border: 0;
+        padding: 12px 35px;
+        font-weight: 600;
+        font-size: 12px;
+        border-radius: @adminApp_borderRadius;
+        cursor: pointer;
+    }
+    .adminApp_listPage_headerTitle{
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+.adminApp_filter_container{
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.adminApp_listPage_filter{
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    width: 95%;
+    justify-content: center;
+    .adminApp_filter{
+        border: 1px solid @gray;
+        padding: 5px 6px;      
+        border-radius: 5px
+    }
+    .adminApp_listPage_searchContainer{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        input{
+            padding: 10px;
+            padding-right: 20px;
+            border: 1px solid @gray;
+            background: @gray-light;
+            border-radius: @adminApp_borderRadius;
+            position: relative;
+            left: 10px;
+        }
+        .adminApp_searchIcon{
+            position: relative;
+            right: 10px;
+        }
+    }
+}
+
+.adminApp_listTable_container, .adminApp_listPane_container{
+    margin-top: 30px;
+}
+
+.adminApp_listSelect_container{
+    border: 1px solid #000;
+    padding: 1px;
+    width: 15px;
+    height: 15px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    .adminApp_list_select{
+        width: 10px;
+        height: 10px;   
+    }
+}
+
+.adminApp_listTable_header, .adminApp_list{
+    display: none;
+    align-items: center;
+    column-gap: 10px;
+    padding: 5px 10px;
+}
+
+.adminApp_listTable{
+    display: grid;
+    row-gap: 15px;
+    place-items: center;
+}
+
+.adminApp_logoutIcon{
+    cursor: pointer;
+}
+
+.adminApp_list{
+    background: @white;
+    margin: 10px auto;
+    cursor: pointer;
+    .adminApp_avatar{
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: @gray;
+        border-radius: 50%;
+    }
+    .adminApp_avatarImg{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+}
+
+.adminApp_card{
+    width: 100%;
+    margin: auto;
+    background: @white;
+    border-radius: @adminApp_borderRadius;
+    padding: 15px;
+}
+
+.adminApp_card_ambList{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.adminApp_cardDetails_amb{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    .adminApp_card_detailsPrimary{
+        display: grid;
+        row-gap: 10px;
+        div{
+            display: flex;
+            flex-direction: column;
+            row-gap: 3px;
+            overflow: hidden; 
+            span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .adminApp_label{
+            font-size: 13px;
+            color: @gray-600;
+        }
+        .adminApp_data{
+            font-size: 1.2rem;
+        }
+    }
+    .adminApp_card_detailsSecondary{
+        display: grid;
+        row-gap: 10px;
+        justify-self: end;
+        font-size: 0.9rem;
+        .adminApp_location{
+            color: @gray-600;
+        }
+        &>div{
+            display: flex;
+            flex-direction: column;
+            row-gap: 3px;
+            white-space: nowrap;
+            overflow: hidden; 
+            span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }        
+        }
+    }
+}
+
+.adminApp_card_userList{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    &>div:nth-child(1){
+        display: grid;
+        grid-template-rows: auto 1fr;
+        .adminApp_cardAvatar{
+            display: grid;
+            place-items: center;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            background: @gray;
+            align-self: center;
+        }
+        .adminApp_cardAvatarImg{
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            align-self: center;
+        }
+        img{
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            align-self: center;
+        }
+    }
+}
+
+.adminApp_cardDetails{
+        display: grid;
+        row-gap: 14px;
+        .adminApp_card_detailsPrimary{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.3rem;
+            div{
+                display: flex;
+                flex-direction: column;
+                row-gap: 2px;
+                .adminApp_label{
+                    color: @gray-600;
+                    font-size: 13px;
+                }
+            }
+        }
+        .adminApp_card_detailsSecondary{
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            font-size: 0.9rem;
+        }
+        .adminApp_card_detailsSecondary>div:nth-child(1){
+            display: flex;
+            flex-direction: column;
+            row-gap: 3px;
+        }
+        .adminApp_card_detailsSecondary>div:nth-child(2){
+            display: flex;
+            justify-content: space-between;
+            .adminApp_actions{
+                display: flex;
+                column-gap: 24px;
+            }
+        }
+}
+
+.adminApp_card_adminList{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    &>div:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        .bg-gray{
+            background: @gray-200;
+            padding: 8px;
+        }
+        .adminApp_defaultAvatar{
+            max-width: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+        }
+    }
+    &>div:nth-child(2){
+        display: grid;
+        row-gap: 14px;
+        .adminApp_card_detailsPrimary{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            div{
+                display: flex;
+                flex-direction: column;
+                row-gap: 2px;
+                .adminApp_label{
+                    color: @gray-600;
+                    font-size: 13px;
+                }
+            }
+        }
+    
+        .adminApp_card_detailsSecondary{
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            color: @gray-500;
+            .adminApp_email{
+                color: @black_alt;
+            }
+        }
+    
+        .adminApp_card_detailsSecondary>div{
+            display: flex;
+            justify-content: space-between;
+            .adminApp_isSuperAdmin{
+                display: flex;
+                column-gap: 4px;
+                .adminApp_status{
+                    color: @black_alt;
+                }
+            }
+            .adminApp_actions{
+                display: flex;
+                column-gap: 24px;
+            }
+        }
+    }
+}
+
+.adminApp_list_active, .adminApp_card_active{
+    border-radius: @adminApp_borderRadius;
+    border: 1px solid black;
+}
+
+.adminApp_list_active, .adminApp_card_active, .adminApp_header_active{
+    .adminApp_list_select{
+        background: #000;
+    }
+}
+
+
+
+.adminApp_listTable_header{
+    .adminApp_avatar{
+        visibility: hidden;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.adminApp_listPane_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 14px;
+    background: @white;
+    border-radius: @adminApp_borderRadius;
+    padding: 15px;
+    .adminApp_listPane_details{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start;
+        padding: 0;
+        row-gap: 10px;
+        div{
+            display: grid;
+            row-gap: 5px;
+            .adminApp_header{
+                font-size: 13px;
+                color: @gray-700;
+            }
+        }
+    }
+}
+
+.adminApp_listInfo_amb_container, .adminApp_listInfo_container{
+    margin-top: 20px;
+    display: grid;
+}
+
+.adminApp_listInfo_amb_container{
+    background: @white;
+    padding: 15px;
+    row-gap: 10px;
+    .adminApp_info_header{
+        color: @gray-700;
+        font-size: 13px;
+    }
+}
+
+.adminApp_listInfo_container{
+    row-gap: 18px;
+    .adminApp_listInfo_painPoints{
+        background: @white;
+        width: 100%;
+        display: grid;
+        padding: 0 6.5%;
+        grid-template-rows: auto 1fr;
+    }
+    .adminApp_painPoints_header{
+        padding: 12px 0;
+        border-bottom: 1px solid #E2E2E2
+    }
+    .adminApp_painPoints_body{
+        padding: 15px 0;
+        margin-bottom: 8px;
+        align-self: start;
+        display: grid;
+        row-gap: 8px;
+        .adminApp_painPoint{
+            display: flex;
+            column-gap: 10px;   
+            align-items: center; 
+        }
+        .adminApp_painPoint_check{
+            width: 18px;
+            height: 18px;
+            background: #000;
+        }
+    }
+}
+
+.adminApp_listPage_navContainer{
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    &::-webkit-scrollbar { 
+        width: 0;
+        height: 0;
+    }
+    
+    .adminApp_listPage_nav{
+        display: flex;
+        margin: 10px 0 20px;
+        align-items: center;
+        column-gap: 20px;
+        border-bottom: 1px solid @pink-200;
+        width: fit-content;
+        .nav_links{
+            padding-bottom: 3px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 6px;
+            cursor: pointer;
+            .text{            
+                color: @gray-700;
+                padding: 5px;
+                font-size: 1.2rem;
+            }   
+            .pill{
+                width: 100%;
+                height: 5px;
+                border-radius: 5px;
+            }
+        }
+        .active{
+            .text{
+                color: #000;
+                font-weight: 500;
+            }  
+            .pill{
+                background: @pink-200;
+            }
+        }
+    }
+}
+
+.adminApp_deletePopup{
+    .adminApp_deleteInput{
+        display: grid;
+        row-gap: 3px;
+        width: 95%;
+        margin: auto;
+        .adminApp_label{
+            margin-top: 18px;
+            color:@gray;
+            font-size: 1em;
+            font-weight: 700;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            span{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-weight: 400;
+                color: @color-error;
+                img{
+                    width: 12px;
+                }
+            }
+        }
+        .adminApp_input{
+            padding: 8px 12px;
+            border: 1px solid @gray;
+            background: @gray-light;
+            border-radius: @adminApp_borderRadius;
+        }
+        .adminApp_inputError{
+            border-color: @color-error;
+        }
+        .adminApp_input:focus{
+            outline: none;
+        }
+    }
+    .secondaryText{
+        color: @gray;
+        margin-top: 18px;
+    }
+}
+
+.adminApp_selectAll{
+    justify-self: end;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .adminApp_listPane_container{
+        padding: 10px;
+    }
+    .adminApp_listPage_header{
+        flex-direction: column;
+        align-items: start;
+        row-gap: 10px;
+        .adminApp_buttonExport{
+            margin-bottom: 12px;
+        }
+    }  
+    .adminApp_listPage_filter{
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        column-gap: 8px;
+    }
+}
+
+@media screen and (min-width: @mobilePortraitBreakPoint) {
+    .adminApp_listTable{
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        column-gap: 10px;
+    }    
+    .adminApp_deletePopup{
+        .adminApp_deleteInput{
+            .adminApp_input{
+                padding: 13px 12px;
+            }
+        }
+    }
+    .adminApp_card{
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (max-width: @mobileBreakPoint) {
+    .adminApp_listPage_container{
+        padding: 0;
+        width: @adminApp_mobileContainer;
+        margin: auto;
+    }
+}
+@media screen and (min-width: @mobileBreakPoint) {
+    .adminApp_listPage_container{
+        margin: 30px 5px;
+    }
+    .adminApp_card{
+        max-width: 350px;
+    }
+
+    .adminApp_listPage_header{
+        .adminApp_details{
+            display: grid;
+        }
+    }
+    .adminApp_listPage_filter{
+        justify-content: start;
+    }
+    
+    .adminApp_filter_container{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr auto;
+        .adminApp_buttonExport{
+            margin-bottom: 0;
+            justify-self: end;
+        }
+    }
+
+    .adminApp_listPane_container{
+        grid-template-columns: 1fr;
+        padding: 15px;
+        .adminApp_listPane_details{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .adminApp_listInfo_amb_container{
+        padding: 20px;
+    }
+    
+}
+
+@media screen and (min-width: @iPadMiniBreakPoint) {
+
+    .adminApp_listSelect_container{
+        width: 10px;
+        height: 10px;
+        .adminApp_list_select{
+            width: 6px;
+            height: 6px;   
+        }
+    }
+
+    .adminApp_listTable_admin_headerDetails{
+        display: grid;
+        align-items: center;
+        width: 100%;
+        margin: 8px 0;
+        font-size: 15px;
+        font-weight: 400;
+        grid-template-columns: 14% 14% 16% 13% 15% 10%;
+        gap: 3%;
+        cursor: auto;
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .adminApp_listTable_admin_actions{
+            justify-self: center;
+            display: flex;
+            column-gap: 18px;
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .adminApp_listTable_user_headerDetails{
+        display: grid;
+        align-items: center;
+        width: 100%;
+        margin: 8px 0;
+        font-size: 15px;
+        font-weight: 400;
+        grid-template-columns: 13% 13% 16% 12% 12% 6% 10%;
+        gap: 2.5%;
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+       .user_actions{
+            justify-self: center;
+            display: flex;
+            column-gap: 18px;
+        }
+    }
+
+    .adminApp_listTable_header{
+        color: @gray-600;
+    }
+
+    .adminApp_listTable_header, .adminApp_list{
+        display: flex;
+    }
+    
+    .adminApp_listTable{
+        display: block;
+    }
+
+    .adminApp_card_waitList, .adminApp_card_ambList, .adminApp_card_adminList{
+        display: none;
+    }
+
+    .adminApp_listTable_amb_headerDetails{
+        display: grid;
+        align-items: center;
+        width: 100%;
+        margin: 8px 0;
+        font-size: 14px;
+        font-weight: 400;
+        grid-template-columns: 12% 12% 15% 12% 8% 12% 10%;
+        gap: 3%;
+        cursor: pointer;
+        span{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .adminApp_selectAll{
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: @iPadPortraitBreakPoint){
+    .adminApp_listPage_container{
+        padding: @layoutContainers_padding;
+    }
+
+    .adminApp_listInfo_container{
+        grid-template-columns: repeat(2, 45%);
+        column-gap: 10%;
+    }
+
+    .adminApp_listPage_nav{
+        column-gap: 30px;
+    }
+
+}
+
+@media screen and (max-width: @iPadBreakPoint) {
+    .adminApp_listPage_container{
+        padding: 0;
+        width: @adminApp_mobileContainer;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: @iPadBreakPoint){
+    .adminApp_listPane_container{
+        padding: 20px;
+        grid-template-columns: repeat(2, 450px);
+        column-gap: 20px;
+    }
+
+    .adminApp_listTable_amb_headerDetails{
+        font-size: 15px;
+    }
+}

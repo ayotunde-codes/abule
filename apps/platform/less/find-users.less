@@ -1,0 +1,144 @@
+// out: false
+
+#findUsers {
+  // margin-top: -@headerMarginBottom;
+
+  .back-section {
+    display: flex;
+    align-items: center;
+
+    .back-button {
+      margin-right: 1em;
+    }
+  }
+
+  .hmv-hero {
+    // padding-top: 
+    .page-container;
+    padding-top: 2em;
+    padding-bottom: $padding-top;
+    min-height: auto;
+
+    // background-image: url("/img/heros/virtual_activities.png");
+    // background-size: auto 80%;
+    // background-repeat: no-repeat;
+    // background-position: right center;
+
+    .banner {
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 6%;
+      grid-auto-columns: 1fr 1fr;
+      padding: 0 0 2em;
+      height: 100%;
+      min-height: inherit;
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .small {
+          margin: 0;
+          line-height: 1.5;
+        }
+
+        .big {
+          margin: 0;
+
+          &.top {
+            margin-top: .5em;
+          }
+
+          &.bottom {
+            margin-bottom: .top[margin-top];
+          }
+        }
+      }
+
+      .right {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+
+        .search-bar {
+          min-width: 20em;
+          width: auto;
+          height: max-content;
+        }
+
+      }
+    }
+
+  }
+
+
+  .cards {
+    .page-container;
+    display: grid;
+    grid-gap: 5em;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media only screen and (max-width: 940px) {
+      grid-gap: 3em;
+
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      grid-gap: 5em;
+      grid-template-columns: 1fr;
+
+    }
+  }
+
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .hmv-hero {
+      // min-height: 15em;
+
+      .banner {
+        grid-gap: 0;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+
+        .left {
+          text-align: center;
+        }
+
+        .right {
+          text-align: center;
+          justify-content: center;
+          padding: 0;
+        }
+      }
+    }
+
+    .activities-actions {
+      display: block;
+
+      .filters {
+        width: 100%;
+
+        .filter {}
+      }
+
+      .search {
+        width: 100%;
+        min-width: 0em;
+        margin-top: 2em;
+        margin-left: 0;
+
+        // background: rgb(230, 230, 230);
+        input {
+          padding: .9em .7em;
+
+        }
+      }
+    }
+
+  }
+}

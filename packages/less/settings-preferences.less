@@ -1,0 +1,72 @@
+// out: false
+
+#preferencesSettings {
+  width: 100%;
+  // background: none !important;
+
+  .note {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .preferences-container {
+    display: grid;
+    grid-gap: 1em;
+    margin-top: 2em;
+
+    .preference-group {
+      background: white;
+      padding: 1.2em;
+      border-radius: 1em;
+      border: solid 1px @color-border-1;
+
+      .preference-title {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-bottom: 0.65em;
+        // opacity: .5;
+      }
+
+      .preference-list {
+        display: grid;
+        grid-gap: 1.3em;
+
+        .preference-item {
+          display: grid;
+          grid-auto-flow: column;
+          align-items: center;
+          justify-content: space-between;
+          grid-gap: 2em;
+
+          .preference-item-question {
+            font-size: 1.0em;
+            max-width: 22em;
+          }
+
+          .preference-item-options {
+            width: max-content;
+
+            .input-select {
+
+              .input-select-list {
+                background: white;
+
+                .input-select-item {
+                  padding-top: .35em;
+                  padding-bottom: $padding-top;
+                }
+              }
+            }
+          }
+
+          @media screen and (max-width: @mobileBreakPoint) {
+            grid-auto-flow: row;
+            grid-gap: .5em;
+
+          }
+        }
+      }
+    }
+
+  }
+}

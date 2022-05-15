@@ -1,0 +1,115 @@
+//out: false
+@maxwidth: 500px;
+
+#accessDeniedPlans {
+  #subscription {
+    padding-left: 0;
+    padding-right: 0;
+
+    .subscription-top {
+      h2 {
+        margin: 0;
+        font-size: 2.3em;
+
+        @media only screen and (max-width: @mobileBreakPoint) {
+          font-size: 2em;
+
+        }
+      }
+    }
+
+    .subscription-toggle-content {
+      .subscription-toggle {
+        margin: 1.5em auto;
+      }
+    }
+
+    .subscription-pricing {
+      margin: 0;
+    }
+
+    .subscription-plan-card {
+      padding: 1.8em;
+
+      .subscription-plan-card-details {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+#accessDeniedMessage {
+
+  .content {
+    max-width: @maxwidth ;
+    margin: auto;
+    // font-size: 1.1em;
+
+    .image {
+      position: relative;
+      width: 12em;
+      height: max-content;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+
+      img {
+        // position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: contain;
+        height: 100%;
+      }
+
+      // &::before {
+      //   content: "";
+      //   display: block;
+      //   padding-top: 70%;
+
+      // }
+    }
+
+    .header {
+      text-align: center;
+      margin: .8em auto;
+      font-weight: 600;
+      font-size: 2.4em;
+    }
+
+    .description {
+      line-height: 1.6;
+    }
+
+    .merits {
+      // background: red;
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      width: max-content;
+      grid-gap: .8em 2em;
+      margin: auto;
+      margin-top: 1em;
+
+      .merit {
+        width: max-content;
+
+        .icon {
+          margin-right: .3em;
+        }
+      }
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      min-width: 0;
+
+      .header {
+        font-size: 2em;
+      }
+
+      .merits {
+        grid-template-columns: repeat(1, max-content);
+      }
+    }
+  }
+
+}

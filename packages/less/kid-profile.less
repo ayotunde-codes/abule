@@ -1,0 +1,238 @@
+// out: false
+
+@borderRadius: 1em;
+
+.kid-profile {
+  .hmv-element;
+  box-shadow: none;
+  position: relative;
+  display: grid;
+  grid-auto-columns: 100% 100%;
+  grid-auto-flow: column;
+  width: 100%;
+  height: max-content;
+  height: 100%;
+  // border-radius: @borderRadius;
+  overflow: hidden;
+  border: solid 1px #e2e2e2;
+  padding: 0;
+
+  .actions {
+    position: absolute;
+    top: 1em;
+    left: auto;
+    right: 0;
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: .5em;
+    bottom: $right;
+    z-index: 2;
+
+    >:nth-child(1) {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 1em;
+      margin-left: 100%;
+      opacity: 0;
+      margin-left: 0;
+      opacity: 1;
+      transition: margin-left 150ms ease-in-out, opacity 200ms ease-in-out;
+    }
+
+    .action {
+      color: white;
+      background: #c5c5c5;
+      background: black;
+      border-radius: 99999em;
+      padding: .4em;
+      cursor: pointer;
+    }
+
+  }
+
+  .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    // background: blue;;
+    top: 0;
+    left: 0;
+    text-align: left;
+
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+
+      .top {
+        display: grid;
+        justify-content: space-between;
+        grid-auto-flow: column;
+        align-items: center;
+        width: 100%;
+        grid-template-columns: auto max-content;
+        grid-gap: .5em;
+
+        .left {
+          display: grid;
+          grid-template-columns: max-content auto;
+          // justify-content: space-between;
+          grid-auto-flow: column;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          grid-gap: .5em;
+          align-items: center;
+
+          .age-group {
+            height: max-content;
+            display: flex;
+            font-size: 1.3em;
+          }
+
+          .name {
+            font-size: 1.4em;
+            text-transform: capitalize;
+            margin: 0;
+            font-weight: 600;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: pre;
+          }
+
+        }
+
+        .color {
+          display: inline-block;
+          height: 0.5em;
+          width: 2.2em;
+          border-radius: 2px;
+        }
+      }
+
+
+
+      .age {
+        font-size: 1em;
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: .6em;
+        margin: 1.8em 0;
+
+
+      }
+
+      .interests {
+        display: flex;
+        flex-direction: column;
+
+
+        .lbl {
+          font-weight: 600;
+        }
+
+        .list {
+          margin-top: .5em;
+          text-transform: capitalize;
+          line-height: 1.8;
+          line-clamp: 3;
+          overflow: hidden;
+          display: -webkit-box;
+          cursor: pointer;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          // text-align: center;
+        }
+      }
+
+    }
+
+
+  }
+
+  &:hover {
+    .actions {
+      .action {
+        background: black;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 85%;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .content {
+      .actions {}
+
+      .details {
+        .avi {
+          font-size: 4em;
+        }
+
+        .title {
+          margin-top: .5em;
+          font-size: 2em;
+        }
+
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .content {
+      .actions {}
+
+      .details {
+        .avi {
+          font-size: 4em;
+        }
+
+        .title {
+          // font-size: 2em;
+        }
+
+      }
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .content {
+      padding: 1.5em 1em 2.3em;
+
+      .actions {
+        font-size: 1.2em;
+
+        >:nth-child(1) {
+          margin-left: 0;
+          opacity: 1;
+
+        }
+      }
+
+      .details {
+        .avi {
+          font-size: 5em;
+        }
+
+        .title {
+          font-size: 2em;
+        }
+
+      }
+    }
+  }
+}

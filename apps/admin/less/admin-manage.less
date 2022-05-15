@@ -1,0 +1,153 @@
+@import (reference) url('./assets/variables.less');
+
+
+.adminApp_formContainer{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    max-width: 450px;
+    padding: 15px;
+    .adminApp_nameContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .adminApp_formHeader{
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        background: @gray-200;
+        border-radius: @adminApp_borderRadius;
+        .black-fill{
+            fill: #000
+        }
+        img {
+            width: 50px;
+            border-radius: 50%;
+            margin: auto;
+        }
+    }
+    .adminApp_dropdownContainer{
+        position: relative;
+        cursor: pointer;
+        .adminApp_dropDown{
+            position: absolute;
+            top: 90px;
+            padding: 10px 12px;
+            width: 100%;
+            display: grid;
+            gap: 8px;
+            background: @white;
+            border-radius: @adminApp_borderRadius;
+            box-shadow: 0px 9px 22px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            .adminApp_dropDownItem{
+                font-size: 1em;
+                cursor: pointer;
+                &:hover{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .adminApp_inputContainer, .adminApp_dropdownContainer{ 
+        width: 100%;
+        display: grid;
+        row-gap: 3px;
+        .adminApp_label{
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        .adminApp_input, .adminApp_dropdownToggler{
+            padding: 8px 12px;
+            border: 1px solid @gray;
+            background: @gray-light;
+            border-radius: @adminApp_borderRadius;
+            &:focus{
+                outline: none;
+            }
+        }
+        .adminApp_dropdownToggler{
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            font-weight: 500;
+        }
+        .adminApp_arrowDown{
+            position: relative;
+            top:1px
+        }
+    }
+
+    .adminApp_actionsContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+    }
+
+    .adminApp_formButton, .adminApp_formButton_cancel{
+        margin: 30px 0;
+        width: 100%;
+        max-width: 130px;
+        border: 0;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: @adminApp_borderRadius;
+        padding: 14px 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .adminApp_formButton{
+        background: @amber;
+        box-shadow: 0px 9px 22px rgba(243, 221, 16, 0.2);
+    }
+    .adminApp_formButton_cancel{
+        background-color: @white;
+        border: 1px solid rgba(226, 226, 226, 1);
+        box-shadow: 0px 9px 14px 0px rgba(103, 103, 103, 0.1);
+    }
+}
+
+@media screen and (min-width: @mobilePortraitBreakPoint){
+    .adminApp_formContainer{
+        .adminApp_inputContainer{ 
+            .adminApp_input{
+                padding: 13px 12px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: @mobileBreakPoint){
+    .adminApp_formContainer{
+        margin-top: 24px;
+        border: @formBorder;
+    }        
+}
+
+@media screen and (min-width: @iPadPortraitBreakPoint){
+    .adminApp_formContainer{
+        width: 530px;
+        max-width: 530px;
+        padding: 28px 20px;
+        margin-top: 32px;
+        .adminApp_nameContainer{
+            flex-direction: row;
+            column-gap: 14px;
+        }
+        .adminApp_inputContainer, .adminApp_dropdownContainer{
+            .adminApp_label{
+                margin-top: 24px;
+            }
+        }
+    }
+    
+}

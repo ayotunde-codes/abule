@@ -1,0 +1,308 @@
+@import (reference) './assets/variables.less';
+
+
+@adminApp_sideNav_paddingLeft: 20px;
+@adminApp_sideNav_border: 5px solid transparent;
+
+.adminApp_sideNav{
+    display: grid;
+}
+
+.adminApp_sideNav_container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: @white;
+    border-radius: @adminApp_borderRadius;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.adminApp_logoutIcon{
+    cursor: pointer;
+}
+
+.adminApp_navStatus{
+    display: none;
+
+}
+
+.adminApp_sideNav_togglerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: @adminApp_mobileContainer;
+    padding-top: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    .adminApp_navImage_small{
+        img{
+            width: 100%;
+            max-width: 50px;
+        }
+    }
+}
+
+.adminApp_menuAlt{
+    width: 20px;
+    height: 15px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #000;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+    span:nth-child(1) {
+        top: 0px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+    span:nth-child(2) {
+        top: 6px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+    span:nth-child(3) {
+        top: 12px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
+    &.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+    &.open span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 1px;
+        left: 8px;
+    }
+    &.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 15px;
+        left: 8px;
+    }
+}
+
+.adminApp_sideNav_toggler{
+    cursor: pointer;
+}
+
+.adminApp_sideNav_header{
+    padding: @layoutContainers-children_padding;  
+    padding-left: @adminApp_sideNav_paddingLeft;  
+    border-left: @adminApp_sideNav_border;
+    border-right: @adminApp_sideNav_border;
+    display: flex;
+    .adminApp_navImage_big{
+        display: none;
+        img{
+            width: 100%;
+            max-width: 150px;
+        }
+    }
+    .adminApp_navImage_small{
+        display: block;
+        img{
+            width: 100%;
+            max-width: 50px;
+        }
+    }
+}
+
+.adminApp_sideNav_link{
+    display: flex;
+    column-gap: 15px;
+    padding: @layoutContainers-children_padding;  
+    padding-left: @adminApp_sideNav_paddingLeft;   
+    margin: 20px auto;
+    border-left: @adminApp_sideNav_border;
+    border-right: @adminApp_sideNav_border;
+    color: @gray-600;
+    font-weight: 400;
+    .adminApp_sideNav_icon{
+        fill: @gray-600
+    }
+}
+
+.adminApp_sideNav_footer{
+    padding: @layoutContainers-children_padding;  
+    text-align: center;
+    align-items: center;
+    display: flex;
+    max-width: 180px;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    color: @gray-600;
+    .adminApp_detailsImage{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: @gray-200;
+        .black-fill{
+            fill: #000;
+        }
+    }
+    .adminApp_details_role{
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #000;
+        .adminApp_name{
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.adminApp_sideNav_link:hover{
+    color: @blue-800;
+    .adminApp_sideNav_icon{
+        fill: @blue-800
+    }
+}
+
+.adminApp_sideNav_link_active{
+    border-left: 5px solid @blue-800;
+    border-radius: 5px;
+    color: @blue-800;
+    .adminApp_sideNav_icon{
+        fill: @blue-800;
+    }
+}
+
+.adminApp_navStatus{
+    .adminApp_navBlankArea{
+        display: none;
+    }
+}
+
+@media screen and (max-width: @iPadBreakPoint) {
+    .adminApp_sideNav_open{
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 10;
+        background-color: (rgba(0,0,0, 0.6));
+        .adminApp_sideNav_closer{
+            font-size: 2em;
+            font-weight: 900;
+            align-self: start;
+            color: @amber;
+            position: relative;
+            top:20;
+            right: 20;
+            cursor: pointer;
+        }
+    }
+    .adminApp_sideNav_container{
+        border-radius: 8px;
+        height: 100vh;
+        padding: 8px;
+        padding-bottom: 14px;
+        padding-left: 2px;
+        width: 90vw;
+        max-width: 240px;
+        background: white;
+    }
+    .adminApp_navStatusOpen{
+        position: fixed;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        width: 100vw;
+        background: transparent;
+        z-index: 10;
+        .adminApp_navBlankArea{
+            display: grid;
+            background: transparent;
+        }
+    }
+    
+}
+
+@media screen and (min-width: @iPadBreakPoint){
+    .adminApp_sideNav_container{
+        margin: @layoutContainers_margin
+    }
+    .adminApp_navStatus{
+        display: grid;
+    }
+
+    .adminApp_sideNav_footer{
+        display: none;
+    }
+
+    .adminApp_sideNav_header{
+        .adminApp_navImage_small{
+            display: block;
+        }
+    }
+    .adminApp_sideNav_togglerContainer{
+        display: none;
+    }
+    .adminApp_sideNav_body{
+        width: 90%;
+    }
+    
+    .adminApp_sideNav_header{
+        .adminApp_navImage_small{
+            display: none;
+        }
+        .adminApp_navImage_big{
+            display: block;
+            margin-top: 20px;
+        }
+    }
+    .adminApp_sideNav_header{
+        justify-content: start;
+    }
+
+    .adminApp_sideNav_link{
+        justify-content: start;
+        align-items: center;
+    }
+}
+
+
+
+
+

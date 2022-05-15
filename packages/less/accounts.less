@@ -1,0 +1,207 @@
+//out: false
+@maxwidth: 550px;
+@faqcontainerMaxWidth: 1450px;
+
+#paymentGateway {
+
+
+  .account-container {
+    @media only screen and (max-width: @mobilePortraitBreakPoint) {
+      h2 {
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+
+  .payment-main-content {
+    max-width: @maxwidth ;
+    margin: auto;
+
+    .product-details,
+    .account-inputs {
+      margin: 0;
+      width: 100%;
+      // padding: 2em;
+      // background-color: fadeout(@color-gray, 80%);
+      border-radius: 2em;
+
+      .header {
+        text-align: center;
+        margin: 0 auto 1.2em auto;
+        font-weight: 600;
+      }
+    }
+
+    .product-details {
+      // background: fadeout(@color-gray, 80%);
+      // padding: 2em;
+
+      table {
+        font-size: 1.2em;
+        // width: 100%;
+
+        tbody {
+          // width: 100%;
+
+          tr {
+            td {
+              padding: 0 0 .6em 0;
+
+              &:nth-child(1) {
+                font-weight: 500;
+                padding-right: 1em;
+
+                &::after {
+                  // content: ":";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .account-inputs {}
+
+  .card {
+    margin: 1.4em 0;
+  }
+
+  .cardd {
+    height: 3.3em;
+    padding: 0.7em;
+  }
+
+  .account-input {
+    width: 100%;
+    // height: auto;
+    // display:flex;
+    // justify-content: center;
+    // align-items: stretch;
+    background-color: #fff;
+    height: 3.3em;
+    border-radius: 1em;
+    z-index: -11;
+    padding: 0.5em;
+
+    // :first-child{
+    //   z-index:999;
+    //   height: 100%;
+    //   width: 100%;
+    //   text-align: center;
+
+    //   form{
+    //     width:100%;
+    //     height: 100%;
+
+    //     input{
+    //       position: static;
+    //     }
+    //   }
+    // }
+  }
+
+  .payment-input-error {
+    color: #ff0000;
+
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    .account-btn {
+      width: auto;
+
+      .icon {
+        margin-left: .5em;
+      }
+
+      &.action-reset {
+        margin-right: 4.5em
+      }
+    }
+  }
+
+  .account-label {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .account-form {
+    margin-top: 1.2em;
+  }
+
+  .payment-card-details {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+
+    .cvc {
+      // width: 7em;
+      // margin-left: 0.5em;
+    }
+
+    .state {
+      // width: 7em;
+      // margin-right: 0.5em;
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      display: block;
+
+
+    }
+  }
+
+  .cards-platform {
+    width: 100%;
+    margin: 4em auto auto;
+    font-size: .7em;
+    opacity: .7;
+
+    .cards {
+      display: grid;
+      justify-content: center;
+      grid-auto-flow: column;
+      grid-gap: 2em;
+
+      .card-platform {
+        font-size: 2.2em;
+
+      }
+
+      @media only screen and (max-width: @mobilePortraitBreakPoint) {
+        grid-gap: 1.5em;
+
+        .card-platform {
+          font-size: 1.8em;
+        }
+
+      }
+    }
+
+    .note {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 1em 0 0;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        font-size: 1.4em;
+        line-height: .1;
+        margin-left: .22em;
+      }
+
+      @media only screen and (max-width: @mobilePortraitBreakPoint) {
+        font-size: 1em;
+      }
+    }
+  }
+}

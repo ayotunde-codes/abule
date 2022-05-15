@@ -1,0 +1,72 @@
+//out:false
+
+.credits-chart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  width: 100%;
+  margin: 0;
+
+
+  &-drawing {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+
+    .donut-ring {
+      stroke: #f3f3f3;
+    }
+
+    .donut-segment {
+      stroke-linecap: round;
+
+      &.activities {
+        stroke: @color-credit-activities;
+      }
+
+      &.driving {
+        stroke: @color-credit-driving;
+      }
+
+      &.sitting {
+        stroke: @color-credit-sitting;
+      }
+
+      &.tutoring {
+        stroke: @color-credit-tutoring;
+      }
+    }
+
+    .donut-hole-shadow {
+      fill: rgba(0, 0, 0, 0.055)
+    }
+  }
+
+  &-donut-hole {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    border-radius: 999999px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+      font-size: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      >:nth-child(2) {
+        font-size: 1.8em;
+        line-height: 1;
+        font-weight: 700;
+        margin: .5em 0 0;
+      }
+    }
+  }
+
+}

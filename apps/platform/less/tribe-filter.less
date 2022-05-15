@@ -1,0 +1,231 @@
+// out: false
+@import (reference) "./assets/iconpack.css";
+
+
+#filterMoreInfor {
+  #profileSetUp #updateInterestsPopUp;
+  padding: 0px;
+  height: 100%;
+  overflow: auto;
+
+  .title {
+    // border-bottom: 1px solid rgb(235, 235, 235) !important;
+
+    .sub {
+      margin-top: 2em;
+
+      &.Error {
+        font-weight: 600;
+      }
+
+      &.help-info {
+        font-style: italic;
+      }
+    }
+  }
+
+  .main-content {
+    display: grid;
+    grid-gap: 3em;
+    margin-top: 1em;
+    max-width: inherit;
+
+    .filter {
+      width: 100%;
+      max-width: inherit;
+
+
+      .name {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: left
+      }
+
+      .description {
+        font-size: 1em;
+        text-align: left;
+        opacity: .6;
+        margin: 0 0 1.2em;
+      }
+
+
+      .input-field {
+        margin: 0
+      }
+
+      &.disabled {
+        opacity: .5;
+      }
+    }
+  }
+
+
+}
+
+
+#updateInterestsPopUp {
+  #profileSetUp #updateInterestsPopUp;
+
+  .kid-interests {
+    margin-top: 3em
+  }
+}
+
+
+#kidsSchoolPopUp {
+  #updateInterestsPopUp;
+
+  .input-picker .input-picker-items .input-picker-items-row {
+    justify-content: center
+  }
+}
+
+#tribeFilter {
+  #activitiesFilter;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto max-content;
+  // margin-top: 1em;
+
+  .filters-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content max-content max-content;
+    overflow-y: hidden !important;
+    width: max-content;
+    margin: 0 auto;
+    max-width: 100%;
+
+
+  }
+
+
+
+  .tribe-actions {
+    #activitiesFilter.activities-actions;
+    padding: .25em 0;
+    // margin-top: 1.4em;
+    height: max-content;
+    overflow: unset;
+
+
+    .filters {
+      margin-top: 0;
+
+      >.label {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        margin-right: .5em;
+      }
+
+      .filter-data {
+        margin: .input-picker.input-picker-items.input-picker-items-row .input-picker-item-container[margin];
+        margin-top: 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .filter-cntrl {
+      width: max-content;
+      font-weight: inherit;
+      padding-left: .8em;
+      padding-right: $padding-left;
+
+      span {}
+
+      .icon {
+        margin-right: .6em;
+      }
+    }
+
+    &.primary {
+      padding-right: .8em;
+
+    }
+
+    &.secondary {
+      border-left: solid 1px darken(@color-border-1, 10%);
+      padding-left: .8em;
+
+      .filters {
+        // width: max-content;
+
+        .filter-cntrl {
+          background: #e9e9e9;
+
+          &.active {
+            // background: black;
+            border-color: black;
+            // color: white !important;
+          }
+        }
+      }
+    }
+
+    &.search {
+      padding-left: .8em;
+      max-height: 100%;
+
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+
+      .filter-cntrl {
+        padding: 0.35em .7em !important;
+      }
+
+      &.secondary {}
+
+      &.search {
+        max-width: 100%;
+
+        .search-bar {
+          height: 36.03px;
+
+        }
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: @iPadMiniBreakPoint) {
+    margin-bottom: 2em;
+
+    .tribe-actions {
+
+
+      &.search {
+        max-width: 11em;
+      }
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    display: flex;
+    flex-direction: column-reverse;
+    // margin-top: 1em;
+
+    .filters-container {
+      grid-auto-columns: max-content;
+      overflow: auto;
+      // #hideScrollBar();
+    }
+
+    .tribe-actions {
+      .filter-cntrl {
+        padding: 0.35em .7em !important;
+      }
+
+      &.secondary {}
+
+      &.search {
+        max-width: 100%;
+      }
+    }
+
+  }
+}

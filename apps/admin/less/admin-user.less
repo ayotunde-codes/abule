@@ -1,0 +1,1195 @@
+@import (reference) './assets/variables.less';
+
+@sittingColor: #F8ADD0;
+@drivingColor: #ACF6F9;
+@activityColor: #F5E073;
+@tutoringColor: #D4D4D4;
+
+.adminApp_filter_alt{
+    border: 1px solid @gray;
+    padding: 5px 6px;      
+    border-radius: 5px;
+    background: @white;
+    cursor: pointer;
+}
+
+.adminApp_messageUserPane{
+    display: flex;
+    align-items: start;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+.adminApp_messageUserPane_profile{
+    &>div:nth-child(1){
+        display: none;
+    }
+    justify-content: center;
+}
+
+.adminApp_messageUser_container{
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.adminApp_messageUser{
+    padding: 9px;
+    min-width: 150px;
+    border: 1px solid #000;
+    border-radius: @adminApp_borderRadius;
+    cursor: pointer;
+    text-align: center;
+}
+
+.adminApp_mesageUser_Options{
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    z-index: 5;
+    background: @white;
+    display: grid;
+    padding: 8px;
+    padding-left: 12px;
+    padding-bottom: 0;
+    border-radius: 8px;
+    width: 90%;
+    justify-self: start;
+    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.1);
+    .triangle{
+        fill: @white;
+        transform: rotate(45deg);
+        position: relative;
+        bottom: 12px;
+        right: 5px;
+        justify-self: end;
+    }
+    &>div{
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        padding: 8px 0;
+        position: relative;
+        bottom: 13px; 
+        font-size: 1.2em; 
+        cursor: pointer; 
+        img{
+            width: 20px;
+        }     
+    }
+
+}
+
+.adminApp_emailUser_popup{
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 14px;
+    .popupHeader{
+        justify-self: start;
+        font-size: 1.4em;
+        font-weight: 500;
+    }
+    .emailUser_input{
+        color: #000;
+        font-size: 1.2em;
+        padding: 8px 0;
+        padding-left: 12px;
+        border: 1px solid @gray-200;
+        width: 95%;
+    }
+    .emailUser_textarea{
+        padding: 8px 0;
+        padding-left: 12px;
+        border: 1px solid @gray-200;
+        width: 95%;
+    }
+    .emailUser_textarea:focus{
+        outline: none;
+    }
+    img{
+        cursor: pointer;
+        position: relative;
+        top: 25px;
+    }
+}
+
+.adminApp_emailUser_button, .adminApp_smsUser_button{
+    position: relative;
+    left: 80%;
+}
+
+.adminApp_emailUser_button{
+    bottom: 50px;
+}
+
+.adminApp_smsUser_button{
+    bottom: 20px;
+}
+
+.adminApp_payoutDetailsContainer{
+    display: grid;
+    gap: 14px 0;
+    &>div:nth-child(2){
+        display: grid;
+        grid-template-columns: auto 1fr auto; 
+        .adminApp_arrowRight, .adminApp_arrowLeft{
+            position: relative;
+            top: 18px;
+            background: white;
+            padding: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+            align-self: center;
+        }
+        .adminApp_arrowRight, .adminApp_arrowLeft{
+            position: relative;
+            top: 18px;
+        }
+        .adminApp_otherPayout{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            white-space: nowrap;
+            overflow-x: auto; 
+            -ms-overflow-style: none !important;  
+            scrollbar-width: none !important;
+            scrollbar-color: transparent !important;
+            &::-webkit-scrollbar{ 
+                display: none !important;  
+                width: 0;
+                background: transparent;
+            }
+        }
+    }
+}
+
+.adminApp_totalPayout{
+    display: grid;
+    background: @blue-200;
+    color: @white;
+    padding: 10px 8px;
+    border-radius: @adminApp_borderRadius;
+    align-items: center;
+    justify-items: end;
+    width: 100vw;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 40px;
+    &>div:nth-child(2){
+        justify-self: start;
+        position: relative;
+        bottom: 15px;
+    }
+    &>div:nth-child(3){
+        position: relative;
+        top: 10px;
+        right: 30px;        
+    }
+    &>div:nth-child(4){
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+        margin-bottom: 15px;
+        div{
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            text-align: center;
+        }
+        .header{
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        .details{
+            font-weight: 300;
+            &>span:nth-child(2){
+                color: #EAEAEA;
+            }
+        }
+    }
+    &>div:nth-child(5){
+        margin-bottom: 10px;
+        position: relative;
+        right: 5px;
+    }
+}
+
+.adminApp_payoutTabContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+
+.adminApp_payoutTab{
+    display: grid;
+    width: max-content;
+    min-width: 300px;
+    padding: 8px 8px 20px 20px;
+    background: @white;
+    margin-top: 40px;
+    border-radius: @adminApp_borderRadius;
+    
+    &>div:nth-child(1){
+        justify-self: end;
+    }
+    .questionIcon{
+        cursor: pointer;
+    }
+    .tooltipContainer{
+        position: relative;
+    }
+    .tooltip{
+        background: white;
+        padding: 10px;
+        z-index: 5;
+        width: min-content;
+        text-align: center;
+        border-radius: @adminApp_borderRadius;
+        box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        bottom: 30px;
+        left: -200px;
+    }
+    .tooltip_lastTile{
+        left: -250px;
+    }
+
+    .hide{
+        display: none;
+    }
+    .adminApp_payoutTab_details{
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        .userIcon{
+            padding: 13px 16px;
+            border-radius: 50%;
+            background: rgba(91, 147, 255, 0.1);
+            .icon{
+                stroke: #5B93FF;
+                fill: #5B93FF;
+            }
+        }
+        .details{
+            padding: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            &>span:nth-child(1){
+                font-size: 1.6rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.adminApp_userOnboarding_lg{
+    display: none  
+}
+
+.adminApp_onboardingContainer{
+    border-radius: @adminApp_borderRadius;
+    background: @white;
+    padding: 20px 0;
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    .adminApp_userJourney{
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 14px;
+        padding-left: 10px;
+    }
+    .signup{
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+    .verification{
+        display: grid;
+        align-items: center;
+        justify-items: start;
+        gap: 5px;  
+        &>div{
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            min-width: 140px;
+        }
+    }
+}
+
+
+.adminApp_userPersona{
+    .adminApp_personaHeader{
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+    border-radius: @adminApp_borderRadius;
+    background: @white;
+    margin-bottom: 18px;
+    padding: 10px;
+    & > div {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 14px
+    }
+    .adminApp_primaryPersona > div:nth-child(2){
+        font-weight: 700;
+        font-size: 1.3em;
+    }
+    .adminApp_personaLabel{
+        color: @gray-500;
+        font-size: 1.2em;
+    }
+    .adminApp_personaPillContainer{
+        margin: 8px 0;
+        display: flex;
+        flex-wrap: wrap;
+        .adminApp_personaPills{
+            background: #F5F5F5;
+            padding: 6px 14px;
+            display: inline;
+            border-radius: @adminApp_borderRadius;
+            margin-bottom: 10px;
+            margin-right: 14px;
+        }
+    }
+}
+
+.adminApp_verified{
+    fill:rgba(37, 211, 102, 1);
+}
+
+.adminApp_unverified{
+    fill: rgba(153, 153, 153, 1);
+
+}
+
+.adminApp_userOnboarding_sm{
+    display: grid;
+    background: url('/bg-userDetails_mobile.png') center no-repeat;
+    background-size: 100% 90%;
+    width: 95vw;
+    margin: auto; 
+    max-width: 300px;
+    height: 750px;
+    place-items: center;
+    padding: 10px 0;
+    font-size: 12px;
+    &>div{
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        left: 2px;
+        position: relative;
+        .adminApp_progressTab_sm{
+            display: flex;
+            height: min-content;
+            background: linear-gradient(to right, transparent 1px, @blue-200 1px, @blue-200 58%, transparent 10%);
+            & div:nth-child(1), & div:nth-child(3){
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            }
+            & div:nth-child(1){
+                border-left: 20px solid @white;
+                text-align: right;
+            }
+            & div:nth-child(3){
+                border-left: 20px solid @blue-200;
+            }
+            & div:nth-child(2){
+                background: @blue-200;
+                width: 95vw;
+                max-width: 110px;
+            }
+            &::after{
+                width: 0;
+                height: 0;
+                border-top: 30px solid transparent;
+                border-left: 60px solid @blue-200;
+                border-bottom: 30px solid transparent;   
+            }
+        }
+    }
+
+    .linkedIn_container{
+        top: 75px;
+    }
+
+    .signup_container{
+        top: 100px;
+    }
+
+    .profile_container{
+        top: 125px;
+    }
+        
+    .verification_container{
+        top: 140px;
+    }
+
+    .verification{
+        position: relative;
+        top: 70px;
+        display: grid;
+        &>div{
+            gap: 10px;
+        }
+    }
+
+    .linkedIn_container span, .profile_container span{
+        display: flex;
+        justify-content: end;
+    }
+
+    .tab_text{
+        display: grid;
+        place-items: center;
+        text-decoration: underline;
+        text-align: center;
+        color: @white;
+        font-size: 13px;
+    } 
+}
+
+.adminApp_tokenContainer{
+    width: 100%;
+    display: grid;
+    gap: 30px 5%;
+    &>div{
+        display: grid;
+        padding: 10px;
+        gap: 15px;
+        background: @white;
+        border-radius: @adminApp_borderRadius;
+        padding: 16px 24px;
+    }
+    .adminApp_tokensDetailsContainer{
+        .header{
+            font-weight: 600;
+        }
+        .adminApp_tokenHistory{
+            place-self: end;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        .adminApp_tokensDetails{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 16px;
+            &>div{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 20px;
+                font-weight: 600;
+                .label{
+                    color: @gray-500;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+            }
+        }
+        .chartContainer{
+            max-width: 200px;
+            margin: auto;
+            display: grid;
+            place-items: center start;
+            .activity{
+                stroke: @activityColor;
+            }
+            .driving{
+                stroke: @drivingColor;
+            }
+            .sitting{
+                stroke: @sittingColor;
+            }
+            .tutoring{
+                stroke: @tutoringColor
+            }
+        }
+        .tokenUsageBody{
+            display: grid;
+            grid-template-rows: 1fr auto;
+            gap: 20px;
+        }
+        .chartLabel{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            &>div{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .activity, .driving, .sitting, .tutoring{
+                font-size: 13px;
+                font-weight: 400;
+                .tag{
+                    height: 5px;
+                }
+            }
+            .activity{
+                .tag{
+                    background-color: @activityColor;
+                }
+            }
+            .driving{
+                .tag{
+                    background-color: @drivingColor;
+                }
+            }
+            .sitting{
+                .tag{
+                    background-color: @sittingColor;
+                }
+            }
+            .tutoring{
+                .tag{
+                    background-color: @tutoringColor;
+                }
+            }
+            
+        }
+    }
+}
+
+.adminApp_purchaseHistoryTable_header{
+    display: none;
+}
+
+.adminApp_purchaseHistoryContainer{
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    background: @white;
+    .purchaseHistory_header{
+        font-weight: 500;
+    }
+}
+
+.adminApp_purchaseHistoryTable{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    border-top: 1px solid @gray;
+    &>div{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+.adminApp_usageRankingsContainer{
+    display: grid;
+    gap: 20px 5%;
+    margin: 20px 0;
+    .pieChart, .barChart{
+        background: @white;
+        padding: 10px;
+        display: grid;
+        border-radius: @adminApp_borderRadius;
+    }
+    .pieChart{
+        &>div:nth-child(2){
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 14px;
+        }
+        gap: 10px;
+        .header{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .chartContainer{
+            max-width: 280px;
+            display: grid;
+            margin: auto;
+            place-items: center start;
+            .mobileStroke{
+                stroke: @activityColor;
+            }
+            .desktopStroke{
+                stroke: @blue-200;
+            }
+            .tabletStroke{
+                stroke: @sittingColor;
+            }
+        }
+        .chartLabel{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .mobileDetails, .tabletDetails, .desktopDetails{
+                display: flex;
+                gap: 8px;
+                .tag{
+                    width: 15px;
+                    height: 40px;
+                }
+                .tagtext{
+                    font-size: 0.8em;
+                    font-weight: 400;
+                }
+                .tagPercent{
+                    font-size: 1.5em;
+                    font-weight: 400;
+                }
+                &>div:nth-child(2){
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+            .desktopDetails{
+                .tag{
+                    background: @blue-200;
+                    height: 50px;
+                }
+            }
+            .tabletDetails{
+                .tag{
+                    background: @sittingColor;
+                    height: 50px;
+                }
+            }
+            .mobileDetails{
+                .tag{
+                    background: @activityColor;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    .barChart{
+        grid-template-rows: auto 1fr;
+        .header{
+            display: flex;
+            justify-content: space-between;
+            &>div{
+                font-size: 0.8rem;
+                color: #5E5E5E;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                align-items: start;
+                .headerText{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: #000
+                }
+            }
+            button{
+                border: 1px solid #000;
+                padding: 5px 13px;
+                border-radius: @adminApp_borderRadius;
+                max-height: 25px;
+                background: @white;
+            }
+        }
+    }
+
+}
+
+.adminApp_user-info{
+    grid-template-rows: 65% 30% !important;
+    height: max-content;
+    margin-bottom: 2em;
+}
+
+.adminApp_user-infoDetails{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+}
+
+.adminApp_verification{
+    display: grid;
+    gap: 20px 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    .verificationContainers{        
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+}
+
+#NewProfile #userDetails .user-confirmed-details .list{
+    .adminApp_userProfileDetails{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        color: gray;
+        align-items: center;
+        &>span{
+            padding: 2px 0;
+            padding-right: 5px;
+        }
+        &>span:nth-child(1){
+            justify-self: end;
+            border-right: 2px solid gray;
+        }
+    }
+}
+
+.adminApp_popupPage{    
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.1);
+    place-items: center;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .adminApp_popupContainer{
+        display: grid;
+        width: 80vw;
+        max-width: 600px;
+        background: @white;
+        gap: 14px;
+        border-radius: @adminApp_borderRadius;
+        padding: 20px;
+    }
+
+    .popupHeader{
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+
+    .adminApp_popupForm{
+        display: grid;
+        gap: 14px;
+        .adminApp_formInput{
+            padding: 8px 12px;
+            border: 1px solid @gray;
+            background: @gray-light;
+            border-radius: @adminApp_borderRadius;
+            width: 100%;
+        }
+        input:focus, textarea:focus{
+            outline: none;
+        }
+        input{
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+    }
+    .adminApp_formBButtonContainer{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .adminApp_formButton{
+        margin: 10px 0;
+        background: @amber;
+        border: 0;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0px 9px 22px rgba(243, 221, 16, 0.2);
+        border-radius: @adminApp_borderRadius;
+        padding: 10px;
+        cursor: pointer;
+        justify-self: end;
+        min-width: 110px;
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint){
+    .adminApp_form{
+        .adminApp_inputContainer{            
+            .adminApp_input{
+                padding: 13px 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @mobilePortraitBreakPoint) {
+    .adminApp_tokenContainer{
+        .adminApp_tokensDetailsContainer{
+            .adminApp_tokenHistory{
+                margin-left: 20px;
+                place-self: center end;
+                width: max-content;
+            }
+            .adminApp_tokensDetails{
+                margin-left: 20px;
+            }
+        }
+    }
+    .adminApp_popupPage{        
+        .adminApp_popupForm{
+            .adminApp_formInput{
+                padding: 13px 12px;
+            }
+        }
+    }
+}
+@media screen and (min-width: @mobilePortraitBreakPoint) {
+    .adminApp_messageUserPane_profile{
+        &>div:nth-child(1){
+            display: block;
+            visibility: hidden;
+        }
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: @mobileBreakPoint){
+    .adminApp_purchaseHistoryTable{
+        padding: 12px 0;
+        gap: 10px;
+        .label{
+            color: #999999;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .time{
+            grid-column: 2;
+            grid-row: 2;
+            place-self: end;
+        }
+        .type{
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .status{
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .amount{
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: end;
+        }
+    }
+    .purchaseHistory_footer{
+        place-self: center end;
+        width: max-content;
+        div{
+            display: none;
+        }
+    }
+    .adminApp_tokenContainer{
+        width: 100%;
+        display: grid;
+        gap: 30px 5%;
+        .adminApp_tokensDetailsContainer{
+            .tokenUsageBody{
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+    .adminApp_usageRankingsContainer{
+        .pieChart{
+            &>div:nth-child(2){
+                grid-template-rows: auto;
+                grid-template-columns: 1fr auto;
+            }
+            .chartLabel{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+    .adminApp_onboardingContainer{
+        padding-bottom: 80px;
+    }
+    .adminApp_supportWrapper{
+        width: @adminApp_mobileContainer;
+    }
+}
+
+@media screen and (min-width: @mobileBreakPoint){
+    .adminApp_payoutDetailsContainer{
+        grid-template-columns: auto 1fr;
+        column-gap: 24px;
+    }
+    .adminApp_onboardingContainer{
+        padding-bottom: 80px;
+        .adminApp_userJourney{
+            position: relative;
+            bottom: 14px;
+        }
+        .verification{
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: auto auto;
+        }
+    }
+    .adminApp_userOnboarding_sm{
+        display: none;
+    }
+
+    .adminApp_userOnboarding_lg{
+        margin-top: 20px;
+        display: grid;
+        gap: 20px;
+        width: 90%;
+        font-size: 12px;
+        background: url('/bg-userDetails_alt.png') left center no-repeat;
+        background-size: contain;
+        height: 280px;
+        max-width: 700px;
+        &>div{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1%;
+            &>div{
+                display: grid;
+                text-align: center
+            }
+        }
+        .profile, .linkedIn{
+            justify-items: end;
+            position: relative;
+        } 
+        .linkedIn{
+            left: 7px;
+        }
+
+        .profile{
+            left: 20px;
+            bottom: 10px;
+        }
+        .signup, .verification{
+            place-items: end;
+            position: relative;  
+        }
+
+        .verification>div:nth-child(3), .verification>div:nth-child(4){
+            align-self: start;
+        }
+        .signup{
+            top: 75px;
+            left: 120px;
+            min-width: 160px
+        }
+
+        .verification{
+            top: 54px;
+            left: 50px; 
+        }
+
+        .adminApp_progressTab{
+            position: relative;
+            left: 70px;
+            display: flex;
+            height: min-content;
+            background: linear-gradient(to right, transparent 1px, rgba(119, 165, 255, 1), 1px, rgba(119, 165, 255, 1) 55%, transparent 55%, transparent);
+            & div:nth-child(1), & div:nth-child(3){
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            }
+            & div:nth-child(1){
+                border-left: 20px solid @white;
+            }
+            & div:nth-child(3){
+                border-left: 20px solid @blue-200;
+            }
+            & div:nth-child(2){
+                background: @blue-200;
+                width: 50%;
+            }
+        }  
+        .tab_text{
+            display: grid;
+            place-items: center;
+            text-decoration: underline;
+            color: @white;
+        }    
+    }
+
+    .adminApp_tokenContainer{
+        grid-template-columns: 1fr 1fr;
+        &>div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .adminApp_tokensDetailsContainer{
+            .chartLabel{
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;                
+            }
+        }
+    }
+    
+    .purchaseHistory_footer{
+        div{
+            display: block;
+        }
+    }
+
+
+    .adminApp_purchaseHistoryTable_header{
+        color: #999999;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .adminApp_purchaseHistoryTable, .adminApp_purchaseHistoryTable_header, .purchaseHistory_footer{
+        display: grid;
+        grid-template-columns: repeat(3, 28%) auto;
+        grid-template-rows: 1fr;
+        padding: 12px 2%;
+    }
+
+    .adminApp_purchaseHistoryTable{
+        border-top: none;
+        box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+        border: 1px solid @gray-200;
+        border-radius: @adminApp_borderRadius; 
+        font-weight: 300;       
+        &>div{
+            .label{
+                display: none;
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width: @iPadMiniBreakPoint){
+    .adminApp_userOnboarding_lg{
+        .profile, .linkedIn{
+            justify-items: end;
+            position: relative;            
+        } 
+
+        .linkedIn{
+            left: 0px;
+            bottom: 10px;
+        }
+
+        .profile{
+            left: 16px;
+            bottom: 20px;
+        }
+        .signup{
+            top: 85px;
+        }
+
+        .verification{
+            top: 64px;
+        }
+        .adminApp_progressTab{
+            left: 85px;
+        }
+
+    }
+    .adminApp_onboardingContainer{
+        padding: 30px 0 40px;
+    }
+    .adminApp_tokenContainer{
+        &>div{
+            gap: 20px;
+        }
+
+        .adminApp_tokensDetailsContainer{
+            .adminApp_tokensDetails{
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 28px 10px;
+            }
+        }
+    }
+    .adminApp_usageRankingsContainer{
+        grid-template-columns: 30% 65%;
+    }
+}
+
+@media screen and (min-width: @iPadPortraitBreakPoint){
+
+    .adminApp_userOnboarding_lg{
+        .verification{
+            left: 110px;
+        }
+        .adminApp_progressTab{
+            left: 95px;
+        }
+    }
+
+    .adminApp_userPersona{
+        padding: 20px;
+    }
+
+    .adminApp_onboardingContainer{
+        .adminApp_userJourney{
+            padding-left: 20px;
+        }
+    }
+    .adminApp_payoutDetailsContainer{
+        gap: 0px 30px;
+    }
+
+    .adminApp_user-infoDetails{
+        &>section{
+            min-height: 130px;
+        }
+    }
+
+}
+
+@media screen and (min-width: @iPadBreakPoint){
+    .adminApp_userOnboarding_lg{
+        width: 900px;
+        max-width: 900px;
+        .profile, .linkedIn{
+            justify-items: end;
+            position: relative;
+            left: auto;
+        } 
+
+        .profile{
+            right: 30px;
+            bottom: 36px;
+        }
+
+        .linkedIn{
+            bottom: 18px;
+            right: 24px;
+        }
+
+        .signup, .verification{
+            place-items: end center;
+            position: relative;  
+        }
+
+        .signup{
+            top: 85px;
+            left: 55px; 
+        }
+
+        .verification{
+            top: 60px;
+            left: 100px; 
+        }
+
+        .adminApp_progressTab{
+            left: 90px;
+        }
+    }
+    .adminApp_onboardingContainer{
+        padding: 40px 0 60px;
+    }
+    .adminApp_purchaseHistoryTable, .adminApp_purchaseHistoryTable_header, .purchaseHistory_footer{
+        grid-template-columns: repeat(3, 30%) auto;
+    }
+}
+

@@ -1,0 +1,396 @@
+// out: false
+
+.chat-message {
+  display: flex;
+  width: max-content;
+  max-width: 80%;
+  // background: yellow;
+  @borderColor: rgb(158, 158, 158);
+  @borderWidth: 1px;
+
+  .left {
+    display: flex;
+    align-items: flex-end;
+    height: auto;
+    padding-bottom: 1em;
+
+
+    .image {
+      width: 2.4em;
+      min-width: $width;
+      max-width: $width;
+      height: $width;
+      min-height: $height;
+      max-height: $height;
+    }
+
+    #chat-message-tip {
+      width: 2em;
+      // margin-left: .6em;
+      position: relative;
+
+      #chat-message-tip-fill {
+        fill: rgb(255, 255, 255);
+      }
+
+      #chat-message-tip-stroke {
+        stroke: @borderColor;
+        stroke-width: @borderWidth;
+      }
+    }
+  }
+
+  .right {
+    width: max-content;
+    margin-left: -1px;
+    max-width: 100%;
+    overflow: hidden;
+
+    .top {
+      padding: 0 0.8em;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 0.4em;
+      text-transform: capitalize;
+      overflow: hidden;
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: flex-end;
+
+      .message {
+        // background: lightblue;
+        width: 100%;
+        border: solid @borderWidth @borderColor;
+        border-radius: 1em;
+        padding: 1em;
+        text-align: left;
+
+        .time {
+          text-align: right;
+          font-size: .7em;
+          margin: 0 0 1em;
+        }
+
+        .content {
+          .medias {
+            @columnHeight: 10em;
+            width: 100%;
+            display: grid;
+            grid-gap: 5px;
+            margin: 0 0 .7em;
+            min-width: 24em;
+            max-width: 100%;
+            grid-auto-rows: @columnHeight;
+
+            .media {
+              border-radius: 5px !important;
+              width: 100% !important;
+              min-width: $width !important;
+              max-width: $width !important;
+              height: 100% !important;
+              min-height: $height !important;
+              max-height: $height !important;
+              cursor: pointer !important;
+
+              img,
+              video {
+                // position: static;
+                // height: auto;
+              }
+
+              .icon.play {
+                display: flex;
+                justify-content: center;
+                /* background: white; */
+                align-items: center;
+                font-size: 2.3em;
+                margin: 0;
+                z-index: 1;
+                color: white;
+                box-shadow: 0px 0px .5em black;
+              }
+
+              .reminant-count {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .55);
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.3em;
+              }
+            }
+
+            &.len-1,
+            &.len-2 {
+              grid-auto-rows: @columnHeight * 2;
+
+            }
+
+            &.len-2,
+            &.len-3,
+            &.len-4 {
+              grid-template-columns: 1fr 1fr;
+            }
+
+            &.len-3 {
+
+              :nth-child(3) {
+                grid-column-end: 3;
+                grid-column-start: 1;
+              }
+            }
+
+            @media only screen and (max-width: @mobileBreakPoint) {
+              min-width: 55vw;
+            }
+          }
+        }
+
+      }
+    }
+
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      width: 100%;
+    }
+  }
+
+  &.is-user {
+    @fillColor: #f3f3f3;
+    flex-direction: row-reverse;
+    margin-left: auto;
+
+    .left {
+      flex-direction: row-reverse;
+
+      #chat-message-tip {
+        transform: rotate(180deg);
+        margin: 0;
+
+        // margin-right: .6em;
+        #chat-message-tip-fill {
+          fill: @fillColor;
+        }
+
+      }
+
+    }
+
+    .right {
+      margin: 0;
+      margin-right: -1px;
+
+      .top {
+        text-align: right;
+
+      }
+
+      .message {
+        background: @fillColor;
+
+        .time {
+          text-align: left;
+        }
+      }
+
+    }
+  }
+
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    max-width: 100%;
+
+
+    .left {
+      #chat-message-tip {
+        width: 1.5em;
+        margin-left: .5em;
+      }
+    }
+
+    &.is-user {
+      .left {
+        #chat-message-tip {
+          margin-right: .5em;
+        }
+      }
+    }
+  }
+
+}
+.chat-messages {
+    padding: 1.2em;
+    // position: relative;
+    .chat-message{
+      .image{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9999999px;
+        width: 2em;
+        min-width: 2em;
+        max-width: 2em;
+        height: 2em;
+        min-height: height;
+        max-height: 2em;
+        background: white;
+        overflow: hidden;
+        >img{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .chatBtip{
+        z-index: 99999 !important;
+        margin-right: -0.956em;
+      }
+      .chat-bubble{
+        padding: 1.2em  2.5em 2em 1.2em;
+          background: #F5F5F5;
+          border-radius: 2em;
+          display: grid;
+          align-content: center;
+          min-width: 10em;
+          width: 15em;
+          min-height: 5em;
+          position: relative;
+      }
+      .chat-bubble-t{
+        padding: 2em  2em 1.5em 1.2em;
+        display: grid;
+          align-content: center;
+        // padding: 1em;
+          background: #fff;
+          border-radius: 2em;
+          min-width: 10em;
+          border: 0.5px solid #9C9C9C;
+          width: 15em;
+          min-height: 5em;
+          z-index: 1;
+      }
+      .time{
+        position: absolute;
+        right: 2.5em;
+        bottom: 1.1em;
+        font-size: 0.7em;
+      }
+      .time-t{
+        position: absolute;
+          right: 9em;
+          bottom: 2em;
+          font-size: 0.7em;
+      }
+      .row-reverse{
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      .atf{
+        position: relative;
+      }
+      .atf::after{
+        content: '';
+          position: absolute;
+          width: 1.2em;
+          height: 1.2em;
+          background-color: white;
+          border-bottom-right-radius: 5em;
+          right: 4.95em;
+          bottom: 1.4em;
+          transform: skewY(-4deg);
+          z-index: 2;
+      }
+      
+
+      .content {
+        .medias {
+          @columnHeight: 10em;
+          width: 100%;
+          display: grid;
+          grid-gap: 5px;
+          margin: 0 0 .7em;
+          min-width: 13em;
+          max-width: 100%;
+          grid-auto-rows: @columnHeight;
+
+          .media {
+            border-radius: 5px !important;
+            width: 100% !important;
+            min-width: $width !important;
+            max-width: $width !important;
+            height: 100% !important;
+            min-height: $height !important;
+            max-height: $height !important;
+            cursor: pointer !important;
+
+            img,
+            video {
+              // position: static;
+              // height: auto;
+            }
+
+            .icon.play {
+              display: flex;
+              justify-content: center;
+              /* background: white; */
+              align-items: center;
+              font-size: 2.3em;
+              margin: 0;
+              z-index: 1;
+              color: white;
+              box-shadow: 0px 0px .5em black;
+            }
+
+            .reminant-count {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, .55);
+              color: #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 2.3em;
+            }
+          }
+
+          &.len-1,
+          &.len-2 {
+            grid-auto-rows: @columnHeight * 2;
+
+          }
+
+          &.len-2,
+          &.len-3,
+          &.len-4 {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          &.len-3 {
+
+            :nth-child(3) {
+              grid-column-end: 3;
+              grid-column-start: 1;
+            }
+          }
+
+          @media only screen and (max-width: @mobileBreakPoint) {
+            min-width: 55vw;
+          }
+        }
+      }
+
+    }
+}

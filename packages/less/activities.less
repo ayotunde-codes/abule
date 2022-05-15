@@ -1,0 +1,237 @@
+// out: false
+
+#activities {
+  margin-top: -@headerMarginBottom;
+
+  .hmv-hero {
+    // padding-top: 
+    .page-container;
+    // background-image: url("/img/heros/virtual_activities.png");
+    // background-size: auto 80%;
+    // background-repeat: no-repeat;
+    // background-position: right center;
+
+    .banner {
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 6%;
+      grid-auto-columns: max-content;
+      height: 100%;
+      min-height: @heroHeight;
+      max-height: @heroHeight;
+      justify-content: center;
+      // max-width: 950px;
+      margin: 0em auto;
+      // background: rgb(241, 241, 241);
+      border-radius: .5em;
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-height: inherit;
+
+
+        .small {
+          margin: 0;
+          line-height: 1.5;
+
+          &::first-letter {
+            text-transform: initial;
+          }
+        }
+
+        .big {
+          margin: 0;
+
+          &.top {
+            margin-top: .5em;
+          }
+
+          &.bottom {
+            margin-bottom: .top[margin-top];
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .right {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        // padding-right: 10%;
+        width: 100%;
+        height: inherit;
+        max-height: inherit;
+        align-self: center;
+
+
+        img {
+          width: auto;
+          height: 100%;
+          object-fit: contain;
+          max-height: inherit;
+
+        }
+      }
+    }
+
+
+
+    @media only screen and (max-width: @iPadMiniBreakPoint) {
+      .banner {
+        grid-gap: 1em;
+        grid-auto-flow: row;
+        height: max-content;
+        margin: 2em 0 1em;
+        min-height: @heroHeight-676;
+        max-height: unset;
+
+        .left {
+          text-align: center;
+
+          .big {
+            font-size: 2em;
+
+          }
+
+          .small {
+            font-size: 1.05em;
+          }
+        }
+
+        .right {
+          padding: 0;
+
+          img {
+            position: static;
+            width: 100%;
+            height: auto;
+            max-height: 16em;
+            ;
+          }
+        }
+      }
+
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      .banner {
+        grid-gap: 1em;
+        grid-auto-flow: row;
+        height: max-content;
+
+        .left {
+          text-align: center;
+
+          margin-top: 2em;
+          padding-bottom: 0;
+        }
+
+        .right {
+          padding: 0;
+
+          img {
+            position: static;
+            width: 100%;
+            height: auto;
+            max-height: 18em;
+            // max-height: 20em;
+          }
+        }
+      }
+
+
+
+
+      .section-header {
+        padding: .5em;
+      }
+
+      .category {
+        margin-bottom: 2.5em;
+      }
+    }
+  }
+
+
+  .section-header {
+    .page-container;
+    // background: @color-9;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    margin-top: 1.45em;
+    // margin-bottom: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .label {
+      font-size: 1.75em;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      text-transform: lowercase;
+
+      .show-more {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .sliders {
+        display: grid;
+        grid-gap: .5em;
+        grid-auto-flow: column;
+        margin-left: .8em;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1em;
+          width: 2em;
+          height: $width;
+          // background: red;
+          // border: solid 1px @font-color;
+          border: solid 1px @color-border-1;
+          border-radius: 99999px;
+          cursor: pointer;
+          font-weight: bold;
+
+          &:hover {
+            border-color: @font-color;
+          }
+        }
+      }
+
+    }
+  }
+
+  .category {
+    margin-bottom: 2em;
+
+    &:last-child {
+      margin-bottom: 0px;
+
+    }
+  }
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    margin-top: -@mobileHeaderMarginBottom;
+
+    .section-header {
+      padding: .5em;
+    }
+
+    .category {
+      margin-bottom: 2.5em;
+    }
+  }
+}

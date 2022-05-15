@@ -1,0 +1,160 @@
+// out: false
+
+#meeting {
+  h1 {
+    margin-bottom: 1.5em;
+  }
+
+  .flow {
+    display: none;
+  }
+
+  #flow-devices {
+    width: 100%;
+    // .page-container;
+    display: block;
+
+    .container {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 4em;
+      align-items: center;
+      width: 100%;
+
+      #form-devices {
+        width: 100%;
+
+        .row {
+          margin-bottom: 2em;
+
+          label {
+            display: inline-block;
+            font-weight: bold;
+            padding: 0 0 0 1.3em;
+            margin: 0 0 .3em;
+          }
+
+          select {
+            font-weight: inherit;
+          }
+
+          &:last-of-type {
+            margin: 0;
+          }
+        }
+
+        #button-test-sound {
+          width: max-content;
+          // pa
+          .bordered;
+          .no-shadow;
+          padding: .7em 1em;
+          margin-bottom: 0;
+
+          .icon {
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: .3em;
+          }
+        }
+      }
+
+      .video-preview {
+        width: 100%;
+
+        video {
+          width: 100%;
+          height: auto;
+          border-radius: 1em;
+          overflow: hidden;
+        }
+      }
+
+    }
+
+    @media only screen and (max-width: @mobileBreakPoint) {
+      .header-label {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column-reverse;
+        grid-gap: 0;
+
+
+        #form-devices {
+          margin-top: 2em;
+        }
+      }
+    }
+
+    #joinButton {
+      width: max-content;
+      margin: 2em auto 0;
+      padding-left: 3em;
+      padding-right: $padding-left;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: @mobileBreakPoint) {
+    .hmv-hero {
+      // min-height: 15em;
+
+      .banner {
+        grid-gap: 0;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+
+        .left {
+          text-align: center;
+        }
+
+        .right {
+          text-align: center;
+          justify-content: center;
+          padding: 0;
+        }
+      }
+    }
+
+    .activities-actions {
+      display: block;
+
+      .filters {
+        width: 100%;
+
+        .filter {}
+      }
+
+      .search {
+        width: 100%;
+        min-width: 0em;
+        margin-top: 2em;
+        margin-left: 0;
+
+        // background: rgb(230, 230, 230);
+        input {
+          padding: .9em .7em;
+
+        }
+      }
+    }
+
+  }
+}
